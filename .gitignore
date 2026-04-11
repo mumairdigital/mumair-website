@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+/.next/
+/out/
+
+# Environment variables — never commit
+.env
+.env.local
+.env*.local
+
+# Leads data (contains personal info)
+leads.json
+
+# Git rewrite temp folder
+.git-rewrite/
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+npm-debug.log*
+yarn-error.log*
