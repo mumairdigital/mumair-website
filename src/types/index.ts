@@ -79,6 +79,8 @@ export interface BlogPost {
   category: string;
   readTime: string;
   metaDescription: string;
+  image?: string;
+  keywords?: string[];
 }
 
 export interface NavItem {

@@ -367,10 +367,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <FadeUp delay={0.2}>
             <div className="mt-10 rounded-2xl bg-gradient-to-br from-purple-600 to-violet-700 p-8 text-center">
               <h3 className="text-xl font-extrabold text-white mb-3">
-                Ready to Dominate Local Search?
+                Ready to Dominate Local Search for Your Home Service Business?
               </h3>
               <p className="text-purple-100 mb-6 text-sm">
-                Get a free Local SEO audit for your HVAC company. I&apos;ll check your GBP, rankings, and competitors — then give you a clear action plan.
+                Get a free {post.category} audit for your {post.category === "Google Business Profile" ? "business" : "home service company"}. I&apos;ll check your GBP, rankings, and competitors — then give you a clear action plan.
               </p>
               <Link
                 href="/contact"

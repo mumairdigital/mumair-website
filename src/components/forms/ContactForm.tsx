@@ -137,7 +137,7 @@ export function ContactForm() {
             <option value="Plumbing">Plumbing</option>
             <option value="Roofing">Roofing</option>
             <option value="Electrical">Electrical</option>
-            <option value="Dentist">Dentist</option>
+            <option value="Landscaping">Landscaping</option>
             <option value="Other">Other</option>
           </select>
           {errors.businessType && (

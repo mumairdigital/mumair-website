@@ -18,10 +18,15 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export const metadata: Metadata = {
-  title: "About Muhammad Umair",
+  title: "About Muhammad Umair | Local SEO & Digital Marketing Consultant",
   description:
-    "Learn about Muhammad Umair, a Local SEO & Digital Marketing expert with 2+ years helping home service businesses in USA & Canada get more calls and leads.",
+    "Muhammad Umair is a Local SEO & Digital Marketing consultant helping home service businesses in USA & Canada rank #1 on Google Maps and generate more leads. 30+ clients, 2+ years.",
   alternates: { canonical: `${SITE_CONFIG.baseUrl}/about` },
+  openGraph: {
+    title: "About Muhammad Umair | Local SEO Consultant for Home Services",
+    description: "Meet Muhammad Umair — Local SEO expert who has helped 30+ HVAC, plumbing & roofing companies dominate Google Maps in USA & Canada.",
+    url: `${SITE_CONFIG.baseUrl}/about`,
+  },
 };
 
 const skills = [
@@ -49,10 +54,10 @@ export default function AboutPage() {
                   About Me
                 </p>
                 <h1 className="text-4xl font-extrabold text-white sm:text-5xl mb-5">
-                  Muhammad <span className="gradient-text">Umair</span>
+                  Muhammad <span className="gradient-text">Umair</span> — Local SEO & Digital Marketing Consultant
                 </h1>
                 <p className="text-xl font-semibold text-purple-300 mb-6">
-                  Local SEO & Digital Marketing Expert for Home Services
+                  Helping Home Service Businesses in USA & Canada Rank #1 on Google Maps
                 </p>
                 <p className="text-gray-400 leading-relaxed mb-6">
                   Hi, I&apos;m Muhammad Umair, a passionate digital marketing consultant with 2+ years of focused experience helping home service businesses across USA and Canada grow their online presence and generate more qualified leads.
@@ -102,7 +107,7 @@ export default function AboutPage() {
       <section className="bg-[#FAF9F7] py-20 px-4 md:px-8">
         <div className="mx-auto max-w-4xl">
           <FadeUp>
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-6 text-center">My Journey</h2>
+            <h2 className="text-3xl font-extrabold text-gray-900 mb-6 text-center">My Journey in Local SEO & Home Service Marketing</h2>
           </FadeUp>
           <div className="space-y-6 text-gray-600 leading-relaxed">
             <FadeUp>
@@ -129,7 +134,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-5xl">
           <FadeUp>
             <h2 className="text-3xl font-extrabold text-gray-900 mb-10 text-center">
-              My Expertise
+              Local SEO & Digital Marketing Skills
             </h2>
           </FadeUp>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -158,7 +163,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl">
           <FadeUp>
             <h2 className="text-3xl font-extrabold text-gray-900 mb-10 text-center">
-              What Sets Me Apart
+              Why Home Service Businesses Choose Me for Local SEO
             </h2>
           </FadeUp>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -185,7 +190,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-5xl">
           <FadeUp>
             <h2 className="text-3xl font-extrabold text-white mb-10 text-center">
-              Tools & Platforms I Work With
+              SEO & Marketing Tools I Use to Get Results
             </h2>
           </FadeUp>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

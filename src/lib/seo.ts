@@ -54,9 +54,10 @@ export function buildPersonSchema() {
     jobTitle: "Digital Marketing Consultant",
     description: "Local SEO & Digital Marketing Expert for Home Service Businesses in USA & Canada",
     url: BASE_URL,
+    image: `${BASE_URL}/umair.jpg.png`,
     email: SITE_CONFIG.email,
     telephone: SITE_CONFIG.whatsapp,
-    sameAs: [SITE_CONFIG.linkedIn],
+    sameAs: [SITE_CONFIG.linkedIn, "https://twitter.com/mumairdigital"],
     knowsAbout: [
       "Local SEO",
       "Google Business Profile Optimization",
@@ -65,13 +66,15 @@ export function buildPersonSchema() {
       "Web Design for Home Services",
       "Digital Marketing for HVAC",
       "Digital Marketing for Plumbing",
+      "Digital Marketing for Roofing",
+      "Digital Marketing for Electricians",
     ],
     hasOccupation: {
       "@type": "Occupation",
       name: "Digital Marketing Consultant",
       occupationLocation: {
-        "@type": "Country",
-        name: "Pakistan",
+        "@type": "AdministrativeArea",
+        name: "USA & Canada",
       },
       description: "Specializing in Local SEO and digital marketing for home service businesses in USA and Canada",
     },
@@ -102,11 +105,14 @@ export function buildProfessionalServiceSchema() {
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Digital Marketing Services",
+      name: "Digital Marketing Services for Home Service Businesses",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Local SEO" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Google Ads Management" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Web Design" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Local SEO for Home Service Businesses" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Google Ads Management for Contractors" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Meta Ads for Home Services" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Web Design for Home Service Businesses" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Google Business Profile Optimization" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "SEO Audit for Local Businesses" } },
       ],
     },
     aggregateRating: {
@@ -140,7 +146,7 @@ export function buildLocalBusinessSchema(location: Location) {
     },
     serviceArea: location.schema.areaServed,
     priceRange: "$$",
-    openingHours: "Mo-Fr 09:00-18:00",
+    openingHours: "Mo-Su 09:00-21:00",
     sameAs: [SITE_CONFIG.linkedIn],
   };
 }
@@ -151,13 +157,15 @@ export function buildBlogPostingSchema(post: BlogPost) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.metaDescription,
+    image: post.image ?? `${BASE_URL}/og-default.jpg`,
     author: {
       "@type": "Person",
       name: post.author,
       url: BASE_URL,
+      image: `${BASE_URL}/umair.jpg.png`,
     },
     publisher: {
-      "@type": "Organization",
+      "@type": "Person",
       name: "Muhammad Umair",
       url: BASE_URL,
     },
@@ -168,8 +176,9 @@ export function buildBlogPostingSchema(post: BlogPost) {
       "@type": "WebPage",
       "@id": `${BASE_URL}/blog/${post.slug}`,
     },
-    keywords: ["Local SEO", "HVAC", "Home Services", "Digital Marketing"],
+    keywords: post.keywords ?? ["Local SEO", "Home Services", "Digital Marketing"],
     articleSection: post.category,
+    wordCount: post.readTime,
   };
 }
 
@@ -192,16 +201,30 @@ export function buildServiceSchema(service: Service) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: service.title,
+    name: `${service.title} for Home Service Businesses`,
     description: service.description,
     provider: {
       "@type": "Person",
       name: "Muhammad Umair",
       url: BASE_URL,
+      image: `${BASE_URL}/umair.jpg.png`,
     },
     url: `${BASE_URL}/services/${service.slug}`,
     areaServed: ["United States", "Canada"],
     serviceType: service.title,
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Home Service Businesses (HVAC, Plumbing, Roofing, Electrical)",
+    },
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      priceCurrency: "USD",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        description: "Custom pricing based on business needs and market competition",
+      },
+    },
   };
 }
 
@@ -217,12 +240,8 @@ export function buildWebsiteSchema() {
       name: "Muhammad Umair",
     },
     potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${BASE_URL}/blog?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
+      "@type": "ReadAction",
+      target: [`${BASE_URL}/blog`],
     },
   };
 }

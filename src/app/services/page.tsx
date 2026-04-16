@@ -3,14 +3,20 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { JsonLd } from "@/components/layout/JsonLd";
 import { SERVICES, SITE_CONFIG } from "@/lib/constants";
 import { MapPin, Monitor, Target, Share2, Search, Star } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Services",
+  title: "Digital Marketing Services for Home Service Businesses | Muhammad Umair",
   description:
-    "Local SEO, Google Ads, Meta Ads, Web Design, SEO Audit, and Google Business Profile services for home service businesses in USA & Canada.",
+    "Local SEO, Google Ads, Meta Ads, Web Design, SEO Audit & GBP services for HVAC, plumbing, roofing & electrical companies in USA & Canada. Proven results: 400+ monthly calls.",
   alternates: { canonical: `${SITE_CONFIG.baseUrl}/services` },
+  openGraph: {
+    title: "Digital Marketing Services for HVAC, Plumbing & Roofing | Muhammad Umair",
+    description: "Specialized Local SEO, Google Ads & GBP services for home service businesses in USA & Canada. Book a free consultation today.",
+    url: `${SITE_CONFIG.baseUrl}/services`,
+  },
 };
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -22,15 +28,30 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Star,
 };
 
+const serviceListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Digital Marketing Services for Home Service Businesses",
+  url: `${SITE_CONFIG.baseUrl}/services`,
+  itemListElement: SERVICES.map((s, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: s.title,
+    url: `${SITE_CONFIG.baseUrl}/services/${s.slug}`,
+    description: s.description,
+  })),
+};
+
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd schema={serviceListSchema} />
       {/* Hero */}
       <section className="bg-[#0a0a0a] pt-32 pb-20 px-4 md:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <FadeUp>
             <h1 className="text-4xl font-extrabold text-white sm:text-5xl mb-4">
-              Digital Marketing <span className="gradient-text">Services</span>
+              Digital Marketing <span className="gradient-text">Services</span> for Home Service Businesses
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Proven Local SEO and digital marketing services designed specifically for home service businesses in USA and Canada. Every service is focused on one thing: filling your phone with leads.
@@ -87,7 +108,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-3xl text-center">
           <FadeUp>
             <h2 className="text-3xl font-extrabold text-white mb-4">
-              Not Sure Which Service You Need?
+              Not Sure Which Digital Marketing Service Your Home Service Business Needs?
             </h2>
             <p className="text-purple-100 text-lg mb-8">
               Book a free 30-minute consultation. I&apos;ll audit your current online presence and recommend exactly which services will get you the fastest results.

@@ -1,27 +1,54 @@
 import type { Metadata } from "next";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { BlogCard } from "@/components/sections/BlogCard";
+import { JsonLd } from "@/components/layout/JsonLd";
 import { BLOG_POSTS, SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Blog — Local SEO & Digital Marketing Tips",
+  title: "Local SEO & Digital Marketing Blog for Home Service Businesses | Muhammad Umair",
   description:
-    "Expert insights on Local SEO, Google Ads, and digital marketing for home service businesses in USA and Canada. Written by Muhammad Umair.",
+    "Expert Local SEO, Google Ads & GBP strategies for HVAC, plumbing, roofing & electrical companies. Actionable guides written by Muhammad Umair — updated regularly.",
   alternates: { canonical: `${SITE_CONFIG.baseUrl}/blog` },
+  openGraph: {
+    title: "Local SEO & Digital Marketing Blog for Home Services | Muhammad Umair",
+    description: "Actionable SEO and marketing guides for HVAC, plumbing, roofing & electrical companies in USA & Canada.",
+    url: `${SITE_CONFIG.baseUrl}/blog`,
+  },
+};
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "Local SEO & Digital Marketing Blog for Home Service Businesses",
+  url: `${SITE_CONFIG.baseUrl}/blog`,
+  description: "Expert Local SEO, Google Ads and GBP strategies for HVAC, plumbing, roofing & electrical companies in USA & Canada.",
+  author: {
+    "@type": "Person",
+    name: "Muhammad Umair",
+    url: SITE_CONFIG.baseUrl,
+  },
+  blogPost: BLOG_POSTS.map((p) => ({
+    "@type": "BlogPosting",
+    headline: p.title,
+    url: `${SITE_CONFIG.baseUrl}/blog/${p.slug}`,
+    datePublished: p.date,
+    description: p.metaDescription,
+  })),
 };
 
 export default function BlogPage() {
   return (
     <>
+      <JsonLd schema={blogSchema} />
       {/* Hero */}
       <section className="bg-[#0a0a0a] pt-32 pb-20 px-4 md:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <FadeUp>
             <h1 className="text-4xl font-extrabold text-white sm:text-5xl mb-4">
-              Digital Marketing <span className="gradient-text">Blog</span>
+              Local SEO & Digital Marketing <span className="gradient-text">Blog</span>
             </h1>
-            <p className="text-gray-400 text-lg">
-              Local SEO strategies, Google Ads tips, and digital marketing insights for home service businesses
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Actionable Local SEO strategies, Google Ads tips, and GBP guides written specifically for HVAC, plumbing, roofing & electrical companies in USA & Canada.
             </p>
           </FadeUp>
         </div>

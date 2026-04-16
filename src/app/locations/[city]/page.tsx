@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LOCATIONS, SITE_CONFIG } from "@/lib/constants";
 import { LocationPageTemplate } from "@/components/sections/LocationPage";
+import { buildLocalBusinessSchema } from "@/lib/seo";
+import { JsonLd } from "@/components/layout/JsonLd";
 
 export function generateStaticParams() {
   return LOCATIONS.map((loc) => ({ city: loc.slug }));
@@ -17,7 +19,7 @@ export async function generateMetadata({
 
   return {
     title: `Local SEO Expert in ${location.name}, ${location.state} | Muhammad Umair`,
-    description: `Local SEO & Digital Marketing for home service businesses in ${location.name}, ${location.state}. Expert Google Maps ranking, Google Ads, and lead generation for HVAC, plumbing, and roofing companies.`,
+    description: `Local SEO & Digital Marketing for HVAC, plumbing & roofing companies in ${location.name}, ${location.state}. Rank #1 on Google Maps and generate more leads. Free audit available.`,
     alternates: {
       canonical: `${SITE_CONFIG.baseUrl}/locations/${location.slug}`,
     },
@@ -33,5 +35,10 @@ export default function LocationPage({ params }: { params: { city: string } }) {
   const location = LOCATIONS.find((l) => l.slug === params.city);
   if (!location) notFound();
 
-  return <LocationPageTemplate location={location} />;
+  return (
+    <>
+      <JsonLd schema={buildLocalBusinessSchema(location)} />
+      <LocationPageTemplate location={location} />
+    </>
+  );
 }

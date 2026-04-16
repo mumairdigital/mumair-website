@@ -6,7 +6,7 @@ import { FadeUp } from "@/components/animations/FadeUp";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { SERVICES, SITE_CONFIG } from "@/lib/constants";
-import { buildServiceSchema } from "@/lib/seo";
+import { buildServiceSchema, buildFAQSchema } from "@/lib/seo";
 import { MapPin, Monitor, Target, Share2, Search, Star } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -31,11 +31,11 @@ export async function generateMetadata({
   if (!service) return {};
 
   return {
-    title: `${service.title} for Home Service Businesses`,
-    description: service.description,
+    title: `${service.title} for Home Service Businesses in USA & Canada | Muhammad Umair`,
+    description: `${service.description} Book a free consultation today.`,
     alternates: { canonical: `${SITE_CONFIG.baseUrl}/services/${service.slug}` },
     openGraph: {
-      title: `${service.title} | Muhammad Umair`,
+      title: `${service.title} for HVAC, Plumbing & Roofing Companies | Muhammad Umair`,
       description: service.description,
       url: `${SITE_CONFIG.baseUrl}/services/${service.slug}`,
     },
@@ -47,12 +47,14 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
   if (!service) notFound();
 
   const schema = buildServiceSchema(service);
+  const faqSchema = service.faq.length > 0 ? buildFAQSchema(service.faq) : null;
   const Icon = iconMap[service.icon] ?? MapPin;
   const otherServices = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 3);
 
   return (
     <>
       <JsonLd schema={schema} />
+      {faqSchema && <JsonLd schema={faqSchema} />}
 
       {/* Hero */}
       <section className="bg-[#0a0a0a] pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
@@ -65,7 +67,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               <Icon className="h-8 w-8 text-white" />
             </div>
             <h1 className="text-4xl font-extrabold text-white sm:text-5xl mb-4">
-              {service.heroTagline}
+              {service.title} for Home Service Businesses — {service.heroTagline}
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
               {service.description}
@@ -97,7 +99,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             <FadeUp>
               <div>
                 <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
-                  What&apos;s Included
+                  What&apos;s Included in My {service.title} Service
                 </h2>
                 <ul className="space-y-4">
                   {service.features.map((f) => (
@@ -113,7 +115,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             <FadeUp delay={0.1}>
               <div>
                 <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
-                  Key Benefits
+                  Benefits of {service.title} for Home Service Businesses
                 </h2>
                 <div className="space-y-4">
                   {service.benefits.map((b) => (
@@ -126,6 +128,21 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               </div>
             </FadeUp>
           </div>
+        </div>
+      </section>
+
+      {/* Mid-page CTA */}
+      <section className="bg-purple-50 border-y border-purple-100 py-8 px-4">
+        <div className="mx-auto max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-gray-700 font-semibold text-center sm:text-left">
+            Ready to grow your {service.title.toLowerCase()} results? Get a free strategy call.
+          </p>
+          <Link
+            href="/contact"
+            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-sm font-bold text-white hover:bg-purple-700 transition-colors"
+          >
+            Book Free Consultation <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 

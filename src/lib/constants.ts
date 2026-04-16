@@ -548,6 +548,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Local SEO",
     readTime: "8 min read",
     metaDescription: "Learn how HVAC companies can use Local SEO to rank #1 on Google Maps, get more calls, and dominate local search in USA and Canada.",
+    image: "https://www.mumairdigital.com/blog/hvac-local-seo-guide.jpg",
+    keywords: ["Local SEO for HVAC", "HVAC Google Maps ranking", "HVAC lead generation", "home service SEO", "Google Business Profile HVAC"],
   },
   {
     slug: "google-business-profile-optimization-home-service-businesses",
@@ -558,6 +560,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Google Business Profile",
     readTime: "10 min read",
     metaDescription: "Learn how to fully optimize your Google Business Profile in 2026 so your home service business ranks in the Maps 3-pack and gets more calls from Google.",
+    image: "https://www.mumairdigital.com/blog/gbp-optimization-guide.jpg",
+    keywords: ["Google Business Profile optimization", "GBP for home service businesses", "Google Maps 3-pack", "local SEO 2026", "plumber HVAC roofing GBP"],
   },
 ];
 

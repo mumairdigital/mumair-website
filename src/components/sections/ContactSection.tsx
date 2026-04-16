@@ -10,7 +10,7 @@ export function ContactSection() {
         <FadeUp>
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl mb-3">
-              Get Your Free Consultation
+              Get Your Free Local SEO Consultation
             </h2>
             <p className="text-gray-400 text-lg">
               Let&apos;s talk about how I can fill your phone with more leads

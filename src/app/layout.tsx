@@ -36,10 +36,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Muhammad Umair — Digital Marketing Expert",
-    images: [{ url: `${SITE_CONFIG.baseUrl}/og-default.jpg`, width: 1200, height: 630 }],
+    title: "Muhammad Umair — Local SEO & Digital Marketing Expert",
+    description: "Local SEO & Digital Marketing Expert for home service businesses in USA & Canada. Helping HVAC, plumbing, roofing & electrical companies rank #1 on Google Maps.",
+    images: [{ url: `${SITE_CONFIG.baseUrl}/og-default.jpg`, width: 1200, height: 630, alt: "Muhammad Umair — Local SEO Expert for Home Service Businesses" }],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@mumairdigital",
     creator: "@mumairdigital",
   },
   robots: {

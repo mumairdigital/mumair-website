@@ -5,10 +5,15 @@ import { buildFAQSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/layout/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Contact — Get Your Free Consultation",
+  title: "Book a Free Local SEO Consultation | Muhammad Umair",
   description:
-    "Book a free 30-minute consultation with Muhammad Umair. Get a Local SEO audit and custom digital marketing strategy for your home service business.",
+    "Book a free 30-minute consultation with Muhammad Umair. Get a free Local SEO & Google Business Profile audit for your HVAC, plumbing, or roofing business. No obligation.",
   alternates: { canonical: `${SITE_CONFIG.baseUrl}/contact` },
+  openGraph: {
+    title: "Book a Free Local SEO Consultation | Muhammad Umair",
+    description: "Get a free 30-minute Local SEO audit for your home service business. I'll review your GBP, rankings & competitors — then give you a clear action plan.",
+    url: `${SITE_CONFIG.baseUrl}/contact`,
+  },
 };
 
 const contactFaqs = [
@@ -22,6 +27,9 @@ export default function ContactPage() {
     <>
       <JsonLd schema={buildFAQSchema(contactFaqs)} />
       <div className="pt-20">
+        <div className="sr-only">
+          <h1>Book a Free Local SEO Consultation for Your Home Service Business</h1>
+        </div>
         <ContactSection />
       </div>
     </>

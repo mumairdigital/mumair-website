@@ -17,13 +17,13 @@ import { buildFAQSchema } from "@/lib/seo";
 import { FAQ_ITEMS, SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Muhammad Umair — Local SEO & Digital Marketing Expert for Home Services",
+  title: "Local SEO Expert for Home Services | Muhammad Umair",
   description:
-    "Digital Marketing That Fills Your Phone With Leads. I help HVAC companies, plumbers, roofers, and electricians rank #1 on Google Maps in USA & Canada. 30+ clients, 95% success rate.",
+    "I help HVAC, plumbing, roofing & electrical companies rank #1 on Google Maps in USA & Canada. Local SEO, Google Ads & GBP optimization. 30+ clients. Get a free audit.",
   alternates: { canonical: SITE_CONFIG.baseUrl },
   openGraph: {
-    title: "Muhammad Umair — Local SEO Expert",
-    description: "Digital Marketing That Fills Your Phone With Leads",
+    title: "Local SEO Expert for Home Services | Muhammad Umair",
+    description: "I help HVAC, plumbing & roofing companies rank #1 on Google Maps in USA & Canada. 30+ clients. Get a free Local SEO audit today.",
     url: SITE_CONFIG.baseUrl,
   },
 };
