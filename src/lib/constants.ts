@@ -563,6 +563,30 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "https://www.mumairdigital.com/blog/gbp-optimization-guide.jpg",
     keywords: ["Google Business Profile optimization", "GBP for home service businesses", "Google Maps 3-pack", "local SEO 2026", "plumber HVAC roofing GBP"],
   },
+  {
+    slug: "local-seo-for-plumbers-get-more-calls",
+    title: "Local SEO for Plumbers: How to Get More Calls from Google in 2026",
+    excerpt: "The complete Local SEO guide for plumbing companies. Learn how to rank #1 on Google Maps, dominate emergency plumbing searches, and fill your schedule with qualified leads.",
+    date: "2026-04-05",
+    author: "Muhammad Umair",
+    category: "Local SEO",
+    readTime: "9 min read",
+    metaDescription: "Complete Local SEO guide for plumbers in 2026. Rank #1 on Google Maps, win emergency plumbing searches, and get more calls with proven strategies.",
+    image: "https://www.mumairdigital.com/blog/local-seo-for-plumbers.jpg",
+    keywords: ["local SEO for plumbers", "plumber Google Maps ranking", "how to get more plumbing leads", "plumbing SEO 2026", "Google Business Profile for plumbers"],
+  },
+  {
+    slug: "google-ads-for-roofing-companies",
+    title: "Google Ads for Roofing Companies: The Complete 2026 Guide to Getting More Jobs",
+    excerpt: "A step-by-step Google Ads guide for roofing contractors. Learn campaign structure, storm damage keywords, bidding strategy, and how to get a 5-10x return on your ad spend.",
+    date: "2026-04-16",
+    author: "Muhammad Umair",
+    category: "Google Ads",
+    readTime: "11 min read",
+    metaDescription: "Complete Google Ads guide for roofing companies 2026. Campaign structure, storm damage keywords, bidding strategy, and landing pages that convert visitors to jobs.",
+    image: "https://www.mumairdigital.com/blog/google-ads-roofing-companies.jpg",
+    keywords: ["Google Ads for roofing companies", "roofing PPC", "roofing Google Ads", "storm damage roofing ads", "roofing contractor marketing 2026"],
+  },
 ];
 
 export const LOCATIONS: Location[] = [
