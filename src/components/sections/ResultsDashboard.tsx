@@ -83,19 +83,26 @@ export function ResultsDashboard() {
         <FadeUp delay={0.2}>
           <div className="rounded-2xl border border-white/10 bg-zinc-900/60 p-6 mb-8">
             <h3 className="text-lg font-bold text-white mb-6 text-center">Growth Trajectory</h3>
-            <div className="flex items-end justify-between gap-4 h-32">
-              {["Start", "Month 3", "Month 6", "Now"].map((label, i) => {
-                const heights = [20, 45, 70, 100];
-                return (
-                  <div key={label} className="flex flex-col items-center gap-2 flex-1">
-                    <div
-                      className="w-full rounded-t-lg bg-gradient-to-t from-purple-700 to-purple-400 transition-all duration-1000"
-                      style={{ height: `${heights[i]}%` }}
-                    />
-                    <span className="text-xs text-gray-400">{label}</span>
-                  </div>
-                );
-              })}
+            {/* Bars */}
+            <div className="flex items-end justify-between gap-3 h-36 mb-3">
+              {[
+                { label: "Start",   height: 28,  color: "from-purple-900 to-purple-700" },
+                { label: "Month 3", height: 72,  color: "from-purple-800 to-purple-500" },
+                { label: "Month 6", height: 112, color: "from-purple-700 to-purple-400" },
+                { label: "Now",     height: 144, color: "from-purple-600 to-violet-400" },
+              ].map(({ label, height, color }) => (
+                <div
+                  key={label}
+                  className={`flex-1 rounded-t-xl bg-gradient-to-t ${color} transition-all duration-700`}
+                  style={{ height: `${height}px` }}
+                />
+              ))}
+            </div>
+            {/* Labels */}
+            <div className="flex justify-between gap-3">
+              {["Start", "Month 3", "Month 6", "Now"].map((label) => (
+                <span key={label} className="flex-1 text-center text-xs text-gray-400">{label}</span>
+              ))}
             </div>
           </div>
         </FadeUp>
