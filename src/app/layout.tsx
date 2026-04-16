@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     template: "%s | Muhammad Umair",
     default: "Muhammad Umair — Local SEO & Digital Marketing Expert",
   },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-icon.svg", type: "image/svg+xml" },
+    ],
+  },
   description:
     "Local SEO & Digital Marketing Expert for home service businesses in USA & Canada. Specializing in Google Maps ranking, Google Ads, and lead generation for HVAC, plumbing, roofing, and electrical companies.",
   metadataBase: new URL(SITE_CONFIG.baseUrl),
