@@ -42,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@mumairdigital",
-    creator: "@mumairdigital",
   },
   robots: {
     index: true,

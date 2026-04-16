@@ -57,7 +57,7 @@ export function buildPersonSchema() {
     image: `${BASE_URL}/umair.jpg.png`,
     email: SITE_CONFIG.email,
     telephone: SITE_CONFIG.whatsapp,
-    sameAs: [SITE_CONFIG.linkedIn, "https://twitter.com/mumairdigital"],
+    sameAs: [SITE_CONFIG.linkedIn, SITE_CONFIG.facebook, SITE_CONFIG.instagram, SITE_CONFIG.tiktok],
     knowsAbout: [
       "Local SEO",
       "Google Business Profile Optimization",
@@ -147,7 +147,7 @@ export function buildLocalBusinessSchema(location: Location) {
     serviceArea: location.schema.areaServed,
     priceRange: "$$",
     openingHours: "Mo-Su 09:00-21:00",
-    sameAs: [SITE_CONFIG.linkedIn],
+    sameAs: [SITE_CONFIG.linkedIn, SITE_CONFIG.facebook, SITE_CONFIG.instagram, SITE_CONFIG.tiktok],
   };
 }
 
