@@ -579,6 +579,18 @@ export const BLOG_POSTS: BlogPost[] = [
     keywords: ["local SEO for plumbers", "plumber Google Maps ranking", "how to get more plumbing leads", "plumbing SEO 2026", "Google Business Profile for plumbers"],
   },
   {
+    slug: "emergency-plumber-near-me",
+    title: "Emergency Plumber Near Me: What to Do & How to Find 24/7 Help Fast (2026)",
+    excerpt: "Burst pipe? Flooded basement? Learn exactly what to do in a plumbing emergency, how to find a 24/7 emergency plumber near you, and what it costs — before disaster strikes.",
+    date: "2026-04-18",
+    author: "Muhammad Umair",
+    category: "Local SEO",
+    readTime: "8 min read",
+    metaDescription: "Need an emergency plumber near you? Learn what to do in a plumbing crisis, how to find a 24/7 same-day plumber fast, and average emergency plumbing costs in 2026.",
+    image: "https://www.mumairdigital.com/blog/emergency-plumber-near-me.jpg",
+    keywords: ["emergency plumber near me", "24 7 plumber near me", "same day plumber near me", "emergency plumber", "same day plumber"],
+  },
+  {
     slug: "google-ads-for-roofing-companies",
     title: "Google Ads for Roofing Companies: The Complete 2026 Guide to Getting More Jobs",
     excerpt: "A step-by-step Google Ads guide for roofing contractors. Learn campaign structure, storm damage keywords, bidding strategy, and how to get a 5-10x return on your ad spend.",
