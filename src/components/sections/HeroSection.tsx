@@ -14,8 +14,8 @@ const trustSignals = [
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
-      {/* Background image with navy overlay */}
+    <section className="relative h-screen flex items-center overflow-hidden">
+      {/* Background image with strong navy overlay */}
       <div className="absolute inset-0">
         <Image
           src="/hero-bg.webp"
@@ -24,13 +24,16 @@ export function HeroSection() {
           priority
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#18055E]/92 via-[#18055E]/75 to-[#18055E]/30" />
+        {/* Full dark base layer so nothing bleeds through */}
+        <div className="absolute inset-0 bg-[#18055E]/70" />
+        {/* Directional gradient — left fully opaque, right shows more image */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0428] via-[#18055E]/80 to-[#18055E]/20" />
       </div>
 
       <HeroOrbs />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 md:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+      <div className="relative z-10 mx-auto max-w-7xl w-full px-4 md:px-8 pt-20">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 items-center">
           {/* Left Content */}
           <div>
             {/* Top Badge */}
@@ -38,7 +41,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 rounded-full border border-[#FEC33B]/40 bg-[#FEC33B]/10 px-4 py-2 text-sm text-[#FEC33B] mb-6"
+              className="inline-flex items-center gap-2 rounded-full border border-[#FEC33B]/40 bg-[#FEC33B]/10 px-4 py-2 text-sm text-[#FEC33B] mb-5"
             >
               <Wind className="h-4 w-4" />
               HVAC Local SEO Specialist — 2+ Years
@@ -49,7 +52,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl font-extrabold leading-tight text-white sm:text-6xl lg:text-7xl mb-4"
+              className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl mb-3"
             >
               I Help HVAC Companies{" "}
               <span className="gradient-text">Get More Booked Calls</span>{" "}
@@ -61,7 +64,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl font-semibold text-[#FEC33B]/90 mb-5"
+              className="text-base font-semibold text-[#FEC33B] mb-4"
             >
               Local SEO · Google Business Profile · HVAC Websites
             </motion.p>
@@ -71,7 +74,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-gray-300 text-lg leading-relaxed mb-8 max-w-lg"
+              className="text-gray-200 text-base leading-relaxed mb-6 max-w-lg"
             >
               When someone&apos;s AC breaks at 9pm they search &ldquo;AC repair near me&rdquo; and call the first company they see. I get you to that position — through Local SEO, Google Business Profile optimization, and websites built to convert. You work directly with me. No agency handoffs. No invented numbers.
             </motion.p>
@@ -81,17 +84,17 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-4 mb-10"
+              className="flex flex-wrap gap-4 mb-6"
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-[#FEC33B] px-7 py-4 text-base font-semibold text-[#18055E] shadow-lg shadow-[#FEC33B]/20 transition-all duration-300 hover:bg-yellow-300 hover:scale-105 btn-glow"
+                className="inline-flex items-center gap-2 rounded-full bg-[#FEC33B] px-6 py-3.5 text-sm font-semibold text-[#18055E] shadow-lg shadow-[#FEC33B]/20 transition-all duration-300 hover:bg-yellow-300 hover:scale-105 btn-glow"
               >
                 Get Free Consultation <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 href="/case-study"
-                className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-4 text-base font-semibold text-white transition-all duration-300 hover:border-white/60 hover:bg-white/5"
+                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:border-white/70 hover:bg-white/10"
               >
                 See Real Case Study
               </Link>
@@ -102,12 +105,12 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="space-y-2"
+              className="space-y-1.5"
             >
               {trustSignals.map((signal) => (
                 <div key={signal} className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-[#FEC33B] shrink-0" />
-                  <span className="text-sm text-gray-300">{signal}</span>
+                  <span className="text-sm text-gray-200">{signal}</span>
                 </div>
               ))}
             </motion.div>
@@ -118,7 +121,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative flex justify-center"
+            className="relative hidden lg:flex justify-center"
           >
             <div className="relative">
               {/* Glow behind image */}
@@ -127,11 +130,11 @@ export function HeroSection() {
                 <Image
                   src="/umair-headshot.webp"
                   alt="Muhammad Umair — HVAC Local SEO Specialist"
-                  width={480}
-                  height={520}
+                  width={380}
+                  height={420}
                   priority
                   className="object-cover object-top"
-                  style={{ maxHeight: "520px" }}
+                  style={{ maxHeight: "420px" }}
                 />
               </div>
 
