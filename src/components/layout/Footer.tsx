@@ -144,7 +144,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-[#FEC33B] mt-0.5 shrink-0" />
-                <span className="text-gray-400 text-sm">Remote — Serving USA & Canada</span>
+                <span className="text-gray-400 text-sm">Remote — Serving USA</span>
               </li>
             </ul>
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-3">

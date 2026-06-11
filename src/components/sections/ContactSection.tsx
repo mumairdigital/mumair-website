@@ -23,14 +23,14 @@ export function ContactSection() {
           <FadeUp className="lg:col-span-2">
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-600/20 shrink-0">
-                  <Mail className="h-6 w-6 text-purple-400" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#18055E]/20 shrink-0">
+                  <Mail className="h-6 w-6 text-[#FEC33B]" />
                 </div>
                 <div>
                   <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Email</p>
                   <a
                     href={`mailto:${SITE_CONFIG.email}`}
-                    className="text-white font-semibold hover:text-purple-300 transition-colors"
+                    className="text-white font-semibold hover:text-[#FEC33B] transition-colors"
                   >
                     {SITE_CONFIG.email}
                   </a>
@@ -60,7 +60,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Location</p>
-                  <p className="text-white font-semibold">Remote — Serving USA & Canada</p>
+                  <p className="text-white font-semibold">Remote — Serving USA</p>
                 </div>
               </div>
 
@@ -82,9 +82,9 @@ export function ContactSection() {
               </div>
 
               {/* Why Choose Me */}
-              <div className="rounded-2xl border border-purple-500/30 bg-purple-600/10 p-5 mt-8">
+              <div className="rounded-2xl border border-[#FEC33B]/20 bg-[#18055E]/20 p-5 mt-8">
                 <h3 className="text-white font-bold mb-4 flex items-center gap-2">
-                  <Shield className="h-5 w-5 text-purple-400" />
+                  <Shield className="h-5 w-5 text-[#FEC33B]" />
                   Why Choose Me
                 </h3>
                 <ul className="space-y-3">
@@ -95,7 +95,7 @@ export function ContactSection() {
                     "24/7 Communication via WhatsApp",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-gray-300">
-                      <CheckCircle className="h-4 w-4 text-purple-400 shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-[#FEC33B] shrink-0" />
                       {item}
                     </li>
                   ))}

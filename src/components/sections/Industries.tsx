@@ -48,18 +48,16 @@ export function Industries() {
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
                       {industry.description}
                     </p>
-                    {isPrimary && (
-                      <div className="rounded-xl overflow-hidden border border-gray-100 mb-4">
-                        <Image
-                          src="/hvac-technician.webp"
-                          alt="HVAC technician servicing an air conditioning unit"
-                          width={480}
-                          height={200}
-                          className="w-full object-cover"
-                          style={{ maxHeight: "160px" }}
-                        />
-                      </div>
-                    )}
+                    <div className="rounded-xl overflow-hidden border border-gray-100 mb-4">
+                      <Image
+                        src={isPrimary ? "/hvac-technician.webp" : "/hvac-service.webp"}
+                        alt={isPrimary ? "HVAC technician servicing an air conditioning unit" : "Home service professional at work"}
+                        width={480}
+                        height={200}
+                        className="w-full object-cover"
+                        style={{ maxHeight: "160px" }}
+                      />
+                    </div>
                     <div className="rounded-xl bg-gray-50 border border-gray-100 px-4 py-3">
                       <p className="text-xs text-gray-500 mb-0.5">Note</p>
                       <p className="text-sm font-semibold text-[#18055E]">{industry.example}</p>
