@@ -21,7 +21,7 @@ const trustItems = [
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#18055E]">
+    <section className="relative h-screen flex flex-col overflow-hidden bg-[#18055E]">
 
       {/* Background city image — right side only */}
       <div className="absolute inset-0 pointer-events-none">
@@ -39,7 +39,7 @@ export function HeroSection() {
       </div>
 
       {/* Main content — fills remaining height */}
-      <div className="relative z-10 flex-1 mx-auto max-w-7xl w-full px-5 md:px-10 grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-10 items-center pt-28 pb-10">
+      <div className="relative z-10 flex-1 mx-auto max-w-7xl w-full px-5 md:px-10 grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-8 items-center pt-24 pb-4">
 
         {/* ── LEFT: Copy ── */}
         <div>
@@ -61,7 +61,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.08 }}
-            className="text-[2.6rem] sm:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.07] text-white mb-5 max-w-lg"
+            className="text-[2.2rem] sm:text-4xl lg:text-[2.9rem] font-extrabold leading-[1.08] text-white mb-4 max-w-lg"
           >
             The First HVAC Company on Google{" "}
             <span className="text-[#FEC33B]">Gets the Call.</span>
@@ -80,7 +80,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.35 }}
-            className="text-[#D4C9FF]/80 text-base sm:text-lg leading-relaxed mb-8 max-w-md"
+            className="text-[#D4C9FF]/80 text-sm sm:text-base leading-relaxed mb-6 max-w-md"
           >
             When someone&apos;s AC breaks at 9pm, they search Google and call the first
             company they see. I get HVAC businesses to that position — through GBP
@@ -92,7 +92,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.43 }}
-            className="flex flex-col sm:flex-row gap-3 mb-9"
+            className="flex flex-col sm:flex-row gap-3 mb-6"
           >
             <Link
               href="/contact"
@@ -138,15 +138,15 @@ export function HeroSection() {
 
             {/* Gold border frame */}
             <div className="relative rounded-2xl p-[2px] bg-gradient-to-b from-[#FEC33B]/60 to-[#FEC33B]/10 shadow-2xl">
-              <div className="rounded-[14px] overflow-hidden bg-[#100746] w-[280px]">
+              <div className="rounded-[14px] overflow-hidden bg-[#100746] w-[240px]">
                 <Image
                   src="/umair-headshot.webp"
                   alt="Muhammad Umair — HVAC Local SEO Specialist"
-                  width={280}
-                  height={340}
+                  width={240}
+                  height={280}
                   priority
                   className="w-full object-cover object-top"
-                  style={{ maxHeight: "340px" }}
+                  style={{ maxHeight: "280px" }}
                 />
               </div>
             </div>
@@ -165,7 +165,7 @@ export function HeroSection() {
           </div>
 
           {/* Name + title below photo */}
-          <div className="mt-10 text-center">
+          <div className="mt-7 text-center">
             <p className="text-white font-bold text-sm">Muhammad Umair</p>
             <p className="text-white/45 text-xs mt-0.5">HVAC Local SEO · Pakistan → USA</p>
           </div>
