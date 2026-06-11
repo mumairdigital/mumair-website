@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle, MapPin, Star, Phone } from "lucide-react";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { JsonLd } from "@/components/layout/JsonLd";
@@ -20,36 +21,46 @@ export function LocationPageTemplate({ location }: LocationPageProps) {
       <JsonLd schema={faqSchema} />
 
       {/* Hero */}
-      <section className="bg-[#0a0a0a] pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-0 h-96 w-96 rounded-full bg-[#18055E] opacity-20" style={{ filter: "blur(80px)" }} />
-        </div>
-        <div className="relative mx-auto max-w-4xl text-center">
+      <section className="relative h-[70vh] min-h-[500px] flex items-center overflow-hidden">
+        {/* City background image */}
+        {location.image && (
+          <Image
+            src={location.image}
+            alt={location.name + " HVAC Local SEO"}
+            fill
+            priority
+            className="object-cover object-center"
+          />
+        )}
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#18055E]/90 via-[#18055E]/75 to-[#18055E]/40" />
+
+        <div className="relative z-10 mx-auto max-w-4xl px-4 md:px-8 pt-20 text-center">
           <FadeUp>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#FEC33B]/30bg-[#18055E]/20 px-4 py-2 text-sm text-[#FEC33B] mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#FEC33B]/40 bg-[#18055E]/40 backdrop-blur-sm px-4 py-2 text-sm text-[#FEC33B] mb-6">
               <MapPin className="h-4 w-4" />
               {location.country} · {location.countryCode}
             </div>
             <h1 className="text-4xl font-extrabold text-white sm:text-5xl mb-4">
-              Local SEO for Home Service Businesses in{" "}
-              <span className="gradient-text">{location.name}</span>
+              HVAC Local SEO in{" "}
+              <span className="text-[#FEC33B]">{location.name}</span>
             </h1>
             <p className="text-xl font-semibold text-[#FEC33B] mb-5">{location.tagline}</p>
-            <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-200 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
               {location.heroDescription}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-[#18055E] px-7 py-4 text-base font-semibold text-white shadow-lg shadow-[#18055E]/30 hover:bg-[#2A0B7A] hover:scale-105 transition-all duration-300 btn-glow"
+                className="inline-flex items-center gap-2 rounded-full bg-[#FEC33B] px-7 py-4 text-base font-bold text-[#18055E] shadow-lg hover:scale-105 transition-all duration-300"
               >
-                Get Free {location.name} SEO Audit <ArrowRight className="h-5 w-5" />
+                Get Free {location.name} HVAC Audit <ArrowRight className="h-5 w-5" />
               </Link>
               <a
-                href={`https://wa.me/923209943057?text=${encodeURIComponent(`Hi Muhammad, I need Local SEO help for my home service business in ${location.name}, ${location.state}.`)}`}
+                href={"https://wa.me/923209943057?text=" + encodeURIComponent("Hi Muhammad, I need HVAC Local SEO help in " + location.name + ", " + location.state + ".")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-green-500/50 px-7 py-4 text-base font-semibold text-green-400 hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 backdrop-blur-sm px-7 py-4 text-base font-semibold text-white hover:bg-white/20 transition-all duration-300"
               >
                 <Phone className="h-5 w-5" />
                 WhatsApp Me
@@ -91,10 +102,10 @@ export function LocationPageTemplate({ location }: LocationPageProps) {
                   Why Local SEO Matters in {location.name}
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  {location.localStats.homeServices}. With thousands of competitors in the {location.name} area, the businesses that appear at the top of Google Maps and local search get the majority of calls.
+                  {location.localStats.homeServices}. When a homeowner searches for AC repair or HVAC service in {location.name}, the companies at the top of Google Maps get the call — and the rest get nothing.
                 </p>
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  I specialize in getting home service businesses to the top of Google in {location.name}, {location.state}. Whether you&apos;re an HVAC company, plumber, roofer, or electrician — I know exactly what it takes to rank in your market.
+                  I specialize in getting HVAC companies to the top of Google in {location.name}, {location.state} — through GBP optimization, Local SEO, and a systematic approach to reviews and reputation.
                 </p>
                 <ul className="space-y-3">
                   {[

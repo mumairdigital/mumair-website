@@ -1,79 +1,95 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Award, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle, Award, MapPin, Wind, Star, Monitor } from "lucide-react";
 import { FadeUp } from "@/components/animations/FadeUp";
-import { CountUp } from "@/components/animations/CountUp";
-import { ContactSection } from "@/components/sections/ContactSection";
-import { STATS, WHY_CHOOSE_ME, TOOLS, SITE_CONFIG } from "@/lib/constants";
-import { MapPin as MapPinIcon, Trophy, Home, Target, MessageCircle, Layers } from "lucide-react";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  MapPin: MapPinIcon,
-  Trophy,
-  Home,
-  Target,
-  MessageCircle,
-  Layers,
-};
+import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "About Muhammad Umair | Local SEO & Digital Marketing Consultant",
+  title: "About Muhammad Umair | HVAC Local SEO Specialist",
   description:
-    "Muhammad Umair is a Local SEO & Digital Marketing consultant helping home service businesses in USA & Canada rank #1 on Google Maps and generate more leads. 30+ clients, 2+ years.",
+    "Muhammad Umair is an HVAC-only Local SEO specialist helping HVAC companies in the USA rank #1 on Google Maps and get more booked service calls.",
   alternates: { canonical: `${SITE_CONFIG.baseUrl}/about` },
   openGraph: {
-    title: "About Muhammad Umair | Local SEO Consultant for Home Services",
-    description: "Meet Muhammad Umair — Local SEO expert who has helped 30+ HVAC, plumbing & roofing companies dominate Google Maps in USA & Canada.",
+    title: "About Muhammad Umair | HVAC Local SEO Specialist",
+    description: "Meet Muhammad Umair — HVAC-only Local SEO expert helping heating and cooling companies dominate Google Maps.",
     url: `${SITE_CONFIG.baseUrl}/about`,
   },
 };
 
 const skills = [
-  { name: "Local SEO & Google Maps", level: 95 },
-  { name: "Google Business Profile", level: 98 },
-  { name: "Google Ads (PPC)", level: 88 },
-  { name: "Meta Ads (Facebook/Instagram)", level: 85 },
-  { name: "Web Design & Development", level: 82 },
-  { name: "Technical SEO", level: 87 },
+  { name: "Google Business Profile Optimization", level: 98 },
+  { name: "Local SEO for HVAC", level: 95 },
+  { name: "HVAC Website Design & Conversion", level: 88 },
+  { name: "Review & Reputation Management", level: 92 },
+  { name: "Local Citation Building", level: 90 },
+  { name: "Google Search Console & Analytics", level: 87 },
+];
+
+const whatIDo = [
+  {
+    icon: MapPin,
+    title: "Google Business Profile",
+    description: "I get HVAC companies into the local 3-pack so customers searching for AC repair, furnace service, or HVAC installation call you first.",
+  },
+  {
+    icon: Wind,
+    title: "HVAC Local SEO",
+    description: "Organic local rankings that compound over time — your business shows up month after month without paying for ads.",
+  },
+  {
+    icon: Monitor,
+    title: "HVAC Websites",
+    description: "Conversion-focused websites built specifically for HVAC companies — fast, mobile-first, and structured to turn visitors into booked calls.",
+  },
+  {
+    icon: Star,
+    title: "Reviews & Reputation",
+    description: "A systematic approach to generating genuine 5-star reviews that build trust and send stronger ranking signals to Google.",
+  },
 ];
 
 export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#0a0a0a] pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
+      <section className="bg-[#FAF9F7] pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-purple-700 opacity-15" style={{ filter: "blur(100px)" }} />
+          <div className="absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-[#18055E] opacity-5" style={{ filter: "blur(120px)" }} />
         </div>
         <div className="relative mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
             <FadeUp>
               <div>
-                <p className="text-purple-400 text-sm font-semibold uppercase tracking-wider mb-4">
-                  About Me
+                <p className="text-[#FEC33B] text-sm font-bold uppercase tracking-[0.2em] mb-4">
+                  About Muhammad Umair
                 </p>
-                <h1 className="text-4xl font-extrabold text-white sm:text-5xl mb-5">
-                  Muhammad <span className="gradient-text">Umair</span> — Local SEO & Digital Marketing Consultant
+                <h1 className="text-4xl font-extrabold text-[#18055E] sm:text-5xl mb-4 leading-tight">
+                  HVAC Local SEO Specialist
                 </h1>
-                <p className="text-xl font-semibold text-purple-300 mb-6">
-                  Helping Home Service Businesses in USA & Canada Rank #1 on Google Maps
+                <div className="h-1 w-16 bg-[#FEC33B] rounded-full mb-6" />
+                <p className="text-xl font-semibold text-gray-700 mb-6">
+                  I help HVAC companies get more booked service calls from Google — through Local SEO, GBP optimization, and websites built to convert.
                 </p>
-                <p className="text-gray-400 leading-relaxed mb-6">
-                  Hi, I&apos;m Muhammad Umair, a passionate digital marketing consultant with 2+ years of focused experience helping home service businesses across USA and Canada grow their online presence and generate more qualified leads.
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Hi, I&apos;m Muhammad Umair. HVAC is the only niche I work in. Not HVAC plus plumbing, not home services in general — just HVAC. That focus means I know exactly what it takes to rank an HVAC company in your market, what customers are searching for when their AC breaks down, and which signals Google uses to decide who gets the call.
                 </p>
-                <p className="text-gray-400 leading-relaxed mb-8">
-                  My specialty is Local SEO and Google Business Profile optimization — the combination that consistently gets HVAC companies, plumbers, roofers, and electricians found by customers who are ready to hire right now. I don&apos;t work with just any business — I only work with home service companies, which means I understand your industry deeply.
+                <p className="text-gray-600 leading-relaxed mb-8">
+                  I work directly with every client. No account managers, no outsourced team. When you email me, I reply. When we have a strategy call, it&apos;s me on the other end — not a junior analyst.
                 </p>
-                <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                  {STATS.map((stat) => (
-                    <div key={stat.label} className="text-center">
-                      <div className="text-3xl font-extrabold text-white">
-                        <CountUp end={stat.value} suffix={stat.suffix} />
-                      </div>
-                      <div className="text-xs text-gray-400 mt-1">{stat.label}</div>
-                    </div>
-                  ))}
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#18055E] px-7 py-3.5 text-sm font-bold text-white shadow-lg hover:bg-[#2A0B7A] hover:scale-105 transition-all duration-300"
+                  >
+                    Get Free HVAC Audit <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    href="/case-study"
+                    className="inline-flex items-center gap-2 rounded-full border-2 border-[#18055E]/20 px-7 py-3.5 text-sm font-semibold text-[#18055E] hover:border-[#18055E]/50 transition-all duration-300"
+                  >
+                    See Case Study
+                  </Link>
                 </div>
               </div>
             </FadeUp>
@@ -81,20 +97,25 @@ export default function AboutPage() {
             <FadeUp delay={0.15}>
               <div className="relative flex justify-center">
                 <div className="relative">
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-600 to-violet-700 opacity-20 blur-2xl scale-105" />
-                  <div className="relative rounded-3xl overflow-hidden border border-purple-500/30 shadow-2xl bg-gradient-to-br from-purple-900/30 to-violet-900/20">
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#18055E] to-[#2A0B7A] opacity-15 blur-2xl scale-105" />
+                  <div className="relative rounded-3xl overflow-hidden border border-[#18055E]/20 shadow-2xl">
                     <Image
-                      src="/umair.jpg.png"
-                      alt="Muhammad Umair — Digital Marketing Consultant"
-                      width={420}
-                      height={480}
+                      src="/umair-headshot.webp"
+                      alt="Muhammad Umair — HVAC Local SEO Specialist"
+                      width={440}
+                      height={500}
                       className="object-cover object-top"
-                      style={{ maxHeight: "480px" }}
+                      style={{ maxHeight: "500px" }}
+                      priority
                     />
                   </div>
-                  <div className="absolute -bottom-3 -right-3 rounded-xl bg-purple-600 px-4 py-2 shadow-lg">
-                    <div className="text-xs text-purple-100">Based in Pakistan</div>
-                    <div className="text-sm font-bold text-white">Serving USA & Canada</div>
+                  <div className="absolute -top-3 -right-3 rounded-xl bg-[#18055E] px-4 py-2 shadow-lg">
+                    <div className="text-xs text-[#FEC33B] font-semibold">HVAC Only</div>
+                    <div className="text-sm font-bold text-white">Specialist</div>
+                  </div>
+                  <div className="absolute -bottom-3 -left-3 rounded-xl bg-white px-4 py-2 shadow-lg border border-gray-100">
+                    <div className="text-xs text-gray-500">Experience</div>
+                    <div className="text-lg font-extrabold text-[#18055E]">2+ Years</div>
                   </div>
                 </div>
               </div>
@@ -103,27 +124,89 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* My Story */}
-      <section className="bg-[#FAF9F7] py-20 px-4 md:px-8">
-        <div className="mx-auto max-w-4xl">
+      {/* What I Do */}
+      <section className="bg-white py-20 px-4 md:px-8 border-t border-gray-100">
+        <div className="mx-auto max-w-7xl">
           <FadeUp>
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-6 text-center">My Journey in Local SEO & Home Service Marketing</h2>
+            <div className="text-center mb-12">
+              <p className="text-[#FEC33B] text-xs font-bold uppercase tracking-[0.2em] mb-3">Services</p>
+              <h2 className="text-3xl font-extrabold text-[#18055E] sm:text-4xl mb-3">
+                What I Do for HVAC Companies
+              </h2>
+              <p className="text-gray-600 max-w-xl mx-auto">
+                Four focused services — each one designed to put your HVAC business in front of customers who are ready to book right now.
+              </p>
+            </div>
           </FadeUp>
-          <div className="space-y-6 text-gray-600 leading-relaxed">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {whatIDo.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <FadeUp key={item.title} delay={i * 0.08}>
+                  <div className="rounded-2xl border border-gray-100 bg-[#FAF9F7] p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#18055E]/10 mb-4">
+                      <Icon className="h-6 w-6 text-[#18055E]" />
+                    </div>
+                    <h3 className="text-base font-bold text-[#18055E] mb-2">{item.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                </FadeUp>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* My Story */}
+      <section className="bg-[#FAF9F7] py-20 px-4 md:px-8 border-t border-gray-100">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeUp>
-              <p>
-                I started my digital marketing career with a focus on helping local businesses get found online. Early on, I noticed that home service businesses — HVAC companies, plumbers, roofers, electricians — had a huge opportunity to dominate their local markets through Google, but most were either invisible online or paying for mediocre results.
-              </p>
-            </FadeUp>
-            <FadeUp delay={0.1}>
-              <p>
-                Over 2+ years, I&apos;ve refined my approach to Local SEO and paid advertising specifically for the home services industry. My results speak for themselves: 400+ monthly calls for HVAC clients, 180%+ organic traffic growth, and $2-$5 cost per conversion on Google Ads — results that most agencies can&apos;t come close to matching.
-              </p>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/about-working.webp"
+                  alt="Muhammad Umair working on HVAC local SEO strategy"
+                  width={520}
+                  height={400}
+                  className="object-cover w-full"
+                  style={{ maxHeight: "400px" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#18055E]/60 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-white font-bold text-lg">HVAC-Only Focus</p>
+                  <p className="text-[#FEC33B] text-sm">Not a side offering — it&apos;s all I do</p>
+                </div>
+              </div>
             </FadeUp>
             <FadeUp delay={0.15}>
-              <p>
-                My philosophy is simple: every dollar you invest in digital marketing should come back to you multiplied. I combine deep technical expertise in Local SEO with data-driven paid advertising strategies to create a full-funnel lead generation machine for your business.
-              </p>
+              <div>
+                <p className="text-[#FEC33B] text-xs font-bold uppercase tracking-[0.2em] mb-3">My Approach</p>
+                <h2 className="text-3xl font-extrabold text-[#18055E] mb-5">Why I Only Work With HVAC Companies</h2>
+                <div className="space-y-5 text-gray-600 leading-relaxed">
+                  <p>
+                    Early in my career I worked with all kinds of local businesses. Over time I noticed that depth beats breadth — the more focused I became on a single industry, the better my results got for every client in that industry.
+                  </p>
+                  <p>
+                    HVAC is a high-intent, high-ticket, high-urgency market. When someone&apos;s AC fails in July, they search Google and call the first company they see. Getting you to that position — and keeping you there — is a specific skill set that requires knowing the HVAC market deeply.
+                  </p>
+                  <p>
+                    I made the decision to go HVAC-only so I could build genuine expertise in your niche, not spread myself thin across dozens of industries.
+                  </p>
+                </div>
+                <div className="mt-8 space-y-3">
+                  {[
+                    "HVAC is my only niche — not a side offering",
+                    "You talk directly to me, not an account manager",
+                    "Real data from Google Search Console every month",
+                    "No long-term contracts — earn your trust monthly",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-[#18055E] shrink-0 mt-0.5" />
+                      <span className="text-gray-700 text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </FadeUp>
           </div>
         </div>
@@ -133,8 +216,8 @@ export default function AboutPage() {
       <section className="bg-white py-20 px-4 md:px-8 border-t border-gray-100">
         <div className="mx-auto max-w-5xl">
           <FadeUp>
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-10 text-center">
-              Local SEO & Digital Marketing Skills
+            <h2 className="text-3xl font-extrabold text-[#18055E] mb-10 text-center">
+              My HVAC Marketing Skills
             </h2>
           </FadeUp>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -143,11 +226,11 @@ export default function AboutPage() {
                 <div>
                   <div className="flex justify-between mb-2">
                     <span className="text-sm font-semibold text-gray-700">{skill.name}</span>
-                    <span className="text-sm text-purple-600 font-bold">{skill.level}%</span>
+                    <span className="text-sm text-[#18055E] font-bold">{skill.level}%</span>
                   </div>
                   <div className="h-2 rounded-full bg-gray-100 overflow-hidden">
                     <div
-                      className="h-full rounded-full bg-gradient-to-r from-purple-600 to-violet-500"
+                      className="h-full rounded-full bg-gradient-to-r from-[#18055E] to-[#2A0B7A]"
                       style={{ width: `${skill.level}%` }}
                     />
                   </div>
@@ -158,83 +241,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values / Why Choose Me */}
-      <section className="bg-[#FAF9F7] py-20 px-4 md:px-8 border-t border-gray-100">
-        <div className="mx-auto max-w-7xl">
-          <FadeUp>
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-10 text-center">
-              Why Home Service Businesses Choose Me for Local SEO
-            </h2>
-          </FadeUp>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {WHY_CHOOSE_ME.map((reason, i) => {
-              const Icon = iconMap[reason.icon] ?? MapPin;
-              return (
-                <FadeUp key={reason.title} delay={i * 0.08}>
-                  <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm card-hover">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 mb-4">
-                      <Icon className="h-6 w-6 text-purple-600" />
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{reason.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{reason.description}</p>
-                  </div>
-                </FadeUp>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Tools */}
-      <section className="bg-[#0a0a0a] py-20 px-4 md:px-8">
-        <div className="mx-auto max-w-5xl">
-          <FadeUp>
-            <h2 className="text-3xl font-extrabold text-white mb-10 text-center">
-              SEO & Marketing Tools I Use to Get Results
-            </h2>
-          </FadeUp>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {Object.entries(TOOLS).map(([category, tools], i) => (
-              <FadeUp key={category} delay={i * 0.1}>
-                <div className="rounded-2xl border border-white/10 bg-zinc-900 p-5">
-                  <h3 className="text-xs font-bold text-purple-400 uppercase tracking-wider mb-4">
-                    {category}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {tools.map((tool) => (
-                      <span
-                        key={tool}
-                        className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-gray-300"
-                      >
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="bg-[#FAF9F7] py-16 px-4 md:px-8">
+      {/* Credentials */}
+      <section className="bg-[#FAF9F7] py-16 px-4 md:px-8 border-t border-gray-100">
         <div className="mx-auto max-w-4xl text-center">
           <FadeUp>
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-8">Credentials & Specializations</h2>
+            <h2 className="text-2xl font-extrabold text-[#18055E] mb-8">Credentials & Specializations</h2>
             <div className="flex flex-wrap gap-3 justify-center">
               {[
-                "Google Ads Expert",
-                "Local SEO Specialist",
+                "HVAC Local SEO Specialist",
                 "Google Business Profile Pro",
-                "Meta Ads Expert",
-                "Web Design Pro",
-                "2+ Years Experience",
-                "Home Services Specialist",
+                "Local Citation Building",
+                "Reputation Management",
+                "HVAC Web Design",
+                "2+ Years HVAC Focus",
+                "Google Search Console",
               ].map((c) => (
-                <div key={c} className="flex items-center gap-2 rounded-full border border-purple-200 bg-purple-50 px-4 py-2">
-                  <Award className="h-4 w-4 text-purple-600" />
-                  <span className="text-sm font-medium text-purple-700">{c}</span>
+                <div key={c} className="flex items-center gap-2 rounded-full border border-[#18055E]/20 bg-[#18055E]/5 px-4 py-2">
+                  <Award className="h-4 w-4 text-[#18055E]" />
+                  <span className="text-sm font-medium text-[#18055E]">{c}</span>
                 </div>
               ))}
             </div>
@@ -247,21 +271,21 @@ export default function AboutPage() {
         <div className="mx-auto max-w-3xl text-center">
           <FadeUp>
             <div className="flex items-center justify-center gap-2 text-gray-500 mb-4">
-              <MapPin className="h-5 w-5 text-purple-500" />
-              <span>Based in Pakistan · Serving USA & Canada Remotely</span>
+              <MapPin className="h-5 w-5 text-[#18055E]" />
+              <span>Based in Pakistan · Serving HVAC Companies Across the USA Remotely</span>
             </div>
             <p className="text-gray-600 text-sm mb-6">
-              I work with clients remotely across all time zones. I use WhatsApp, email, and video calls to ensure seamless communication with every client.
+              I work with clients remotely. Strategy calls, monthly reports, and ongoing communication via WhatsApp and email — seamless no matter your time zone.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               {[
                 "WhatsApp Communication",
                 "Video Strategy Calls",
                 "Monthly Reports",
-                "24/7 Availability",
+                "Fast Response Time",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-1.5 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  <CheckCircle className="h-4 w-4 text-[#18055E]" />
                   {item}
                 </div>
               ))}
@@ -271,20 +295,20 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-purple-600 to-violet-700 py-16 px-4 md:px-8">
+      <section className="bg-gradient-to-br from-[#18055E] to-[#2A0B7A] py-16 px-4 md:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <FadeUp>
             <h2 className="text-3xl font-extrabold text-white mb-4">
-              Ready to Work Together?
+              Ready to Get More HVAC Calls From Google?
             </h2>
-            <p className="text-purple-100 text-lg mb-8">
-              Book a free 30-minute consultation and let&apos;s discuss how I can help your home service business get more leads.
+            <p className="text-blue-100 text-lg mb-8">
+              Book a free consultation. I&apos;ll audit your current Google presence and tell you exactly where the opportunity is in your market.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-bold text-purple-600 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 rounded-full bg-[#FEC33B] px-8 py-4 text-base font-bold text-[#18055E] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
-              Book Free Consultation <ArrowRight className="h-5 w-5" />
+              Get Free HVAC Audit <ArrowRight className="h-5 w-5" />
             </Link>
           </FadeUp>
         </div>

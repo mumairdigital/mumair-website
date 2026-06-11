@@ -9,11 +9,12 @@ export function PricingSection() {
       <div className="mx-auto max-w-7xl">
         <FadeUp>
           <div className="text-center mb-12">
+            <p className="text-[#FEC33B] text-xs font-bold uppercase tracking-[0.2em] mb-3">Pricing</p>
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-3">
-              Transparent Pricing Plans
+              Transparent HVAC SEO Pricing
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Choose the package that best fits your home service business needs and budget
+              No hidden fees, no long-term contracts. Month-to-month plans designed for HVAC businesses of all sizes.
             </p>
           </div>
         </FadeUp>
@@ -24,12 +25,12 @@ export function PricingSection() {
               <div
                 className={`relative rounded-2xl h-full flex flex-col overflow-hidden card-hover ${
                   plan.popular
-                    ? "border-2 border-purple-600 shadow-xl shadow-purple-500/20"
+                    ? "border-2 border-[#18055E] shadow-xl shadow-[#18055E]/20"
                     : "border border-gray-200 shadow-md bg-white"
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute top-0 left-0 right-0 bg-purple-600 py-2 text-center text-xs font-bold text-white uppercase tracking-wider">
+                  <div className="absolute top-0 left-0 right-0 bg-[#18055E] py-2 text-center text-xs font-bold text-white uppercase tracking-wider">
                     Most Popular
                   </div>
                 )}
@@ -49,7 +50,7 @@ export function PricingSection() {
                       <li key={feature} className="flex items-start gap-2">
                         <CheckCircle
                           className={`h-5 w-5 shrink-0 mt-0.5 ${
-                            plan.popular ? "text-purple-600" : "text-green-500"
+                            plan.popular ? "text-[#18055E]" : "text-green-500"
                           }`}
                         />
                         <span className="text-sm text-gray-700">{feature}</span>
@@ -61,8 +62,8 @@ export function PricingSection() {
                     href="/contact"
                     className={`w-full rounded-xl py-3.5 text-center text-sm font-bold transition-all duration-200 ${
                       plan.popular
-                        ? "bg-purple-600 text-white hover:bg-purple-500 shadow-lg shadow-purple-500/30"
-                        : "border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
+                        ? "bg-[#18055E] text-white hover:bg-[#2A0B7A] shadow-lg shadow-[#18055E]/30"
+                        : "border-2 border-purple-600 text-[#18055E] hover:bg-[#18055E] hover:text-white hover:text-white"
                     }`}
                   >
                     {plan.ctaText}

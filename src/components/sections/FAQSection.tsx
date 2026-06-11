@@ -15,7 +15,7 @@ export function FAQSection() {
       <div className="mx-auto max-w-3xl">
         <FadeUp>
           <div className="text-center mb-12">
-            <span className="inline-block rounded-full bg-purple-100 text-purple-600 px-4 py-1.5 text-xs font-bold uppercase tracking-wider mb-4">
+            <span className="inline-block rounded-full bg-[#18055E]/10 text-[#18055E] px-4 py-1.5 text-xs font-bold uppercase tracking-wider mb-4">
               FAQ
             </span>
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -31,7 +31,7 @@ export function FAQSection() {
                 className={cn(
                   "rounded-2xl border bg-white overflow-hidden transition-all duration-200",
                   openIndex === i
-                    ? "border-purple-300 shadow-md shadow-purple-100"
+                    ? "border-[#18055E]/30 shadow-md shadow-[#18055E]/10"
                     : "border-gray-200 shadow-sm"
                 )}
               >
@@ -43,7 +43,7 @@ export function FAQSection() {
                   <span className="text-base font-semibold text-gray-900 pr-4">{item.q}</span>
                   <ChevronDown
                     className={cn(
-                      "h-5 w-5 text-purple-500 shrink-0 transition-transform duration-300",
+                      "h-5 w-5 text-[#18055E] shrink-0 transition-transform duration-300",
                       openIndex === i && "rotate-180"
                     )}
                   />

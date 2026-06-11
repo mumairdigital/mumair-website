@@ -20,6 +20,7 @@ export interface Location {
     result: string;
   };
   faqs: Array<{ q: string; a: string }>;
+  image?: string;
   nearbyCities: Array<{ name: string; slug: string }>;
   schema: {
     addressLocality: string;
