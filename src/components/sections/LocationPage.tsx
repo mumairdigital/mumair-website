@@ -21,7 +21,7 @@ export function LocationPageTemplate({ location }: LocationPageProps) {
       <JsonLd schema={faqSchema} />
 
       {/* Hero */}
-      <section className="relative h-[70vh] min-h-[500px] flex items-center overflow-hidden">
+      <section className="relative flex items-center overflow-hidden" style={{ minHeight: "100svh" }}>
         {/* City background image */}
         {location.image && (
           <Image
@@ -32,37 +32,43 @@ export function LocationPageTemplate({ location }: LocationPageProps) {
             className="object-cover object-center"
           />
         )}
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#18055E]/90 via-[#18055E]/75 to-[#18055E]/40" />
+        {/* Overlay — stronger on left/top for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#18055E]/95 via-[#18055E]/80 to-[#18055E]/50" />
 
-        <div className="relative z-10 mx-auto max-w-4xl px-4 md:px-8 pt-20 text-center">
+        <div className="relative z-10 w-full mx-auto max-w-3xl px-5 md:px-8 pt-28 pb-16 text-center">
           <FadeUp>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#FEC33B]/40 bg-[#18055E]/40 backdrop-blur-sm px-4 py-2 text-sm text-[#FEC33B] mb-6">
-              <MapPin className="h-4 w-4" />
-              {location.country} · {location.countryCode}
+            {/* Location badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#FEC33B]/40 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs font-semibold text-[#FEC33B] mb-5">
+              <MapPin className="h-3.5 w-3.5 shrink-0" />
+              {location.state} · HVAC Local SEO
             </div>
-            <h1 className="text-4xl font-extrabold text-white sm:text-5xl mb-4">
-              HVAC Local SEO in{" "}
+
+            <h1 className="text-3xl font-extrabold text-white sm:text-4xl md:text-5xl mb-4 leading-tight">
+              HVAC Companies in{" "}
               <span className="text-[#FEC33B]">{location.name}</span>
+              <br className="hidden sm:block" />
+              {" "}Get More Calls From Google
             </h1>
-            <p className="text-xl font-semibold text-[#FEC33B] mb-5">{location.tagline}</p>
-            <p className="text-gray-200 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-              {location.heroDescription}
+
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 max-w-xl mx-auto">
+              I get HVAC businesses in {location.name} into the Google Maps 3-pack — through GBP optimization, Local SEO, and a review system that builds trust and rankings at the same time.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
+
+            {/* CTAs — stack on mobile, side by side on sm+ */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-[#FEC33B] px-7 py-4 text-base font-bold text-[#18055E] shadow-lg hover:scale-105 transition-all duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#FEC33B] px-7 py-4 text-base font-bold text-[#18055E] shadow-lg hover:scale-105 transition-all duration-300"
               >
-                Get Free {location.name} HVAC Audit <ArrowRight className="h-5 w-5" />
+                Get Free {location.name} Audit <ArrowRight className="h-5 w-5 shrink-0" />
               </Link>
               <a
                 href={"https://wa.me/923209943057?text=" + encodeURIComponent("Hi Muhammad, I need HVAC Local SEO help in " + location.name + ", " + location.state + ".")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 backdrop-blur-sm px-7 py-4 text-base font-semibold text-white hover:bg-white/20 transition-all duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 backdrop-blur-sm px-7 py-4 text-base font-semibold text-white hover:bg-white/20 transition-all duration-300"
               >
-                <Phone className="h-5 w-5" />
+                <Phone className="h-5 w-5 shrink-0" />
                 WhatsApp Me
               </a>
             </div>
@@ -70,32 +76,30 @@ export function LocationPageTemplate({ location }: LocationPageProps) {
         </div>
       </section>
 
-      {/* Local Stats */}
-      <section className="bg-zinc-950 border-t border-white/5 py-12 px-4 md:px-8">
+      {/* Quick Stats Bar */}
+      <section className="bg-[#18055E] py-8 px-4 md:px-8">
         <div className="mx-auto max-w-5xl">
-          <FadeUp>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-              <div className="rounded-2xl border border-white/10 bg-zinc-900 p-6 text-center">
-                <div className="text-2xl font-extrabold text-white mb-1">{location.population}</div>
-                <div className="text-gray-400 text-sm">Population</div>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-zinc-900 p-6 text-center">
-                <div className="text-2xl font-extrabold text-white mb-1">{location.localStats.businesses}</div>
-                <div className="text-gray-400 text-sm">Home Service Businesses</div>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-zinc-900 p-6 text-center sm:col-span-2 md:col-span-1">
-                <div className="text-lg font-bold text-[#FEC33B] mb-1">{location.marketFocus}</div>
-                <div className="text-gray-400 text-sm">Primary Market Focus</div>
-              </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+            <div className="py-2">
+              <div className="text-xl font-extrabold text-white">{location.population}</div>
+              <div className="text-[#FEC33B] text-xs font-semibold mt-0.5">Population</div>
             </div>
-          </FadeUp>
+            <div className="py-2">
+              <div className="text-xl font-extrabold text-white">Year-Round</div>
+              <div className="text-[#FEC33B] text-xs font-semibold mt-0.5">HVAC Demand</div>
+            </div>
+            <div className="py-2 col-span-2 md:col-span-1">
+              <div className="text-base font-bold text-white capitalize">{location.marketFocus}</div>
+              <div className="text-[#FEC33B] text-xs font-semibold mt-0.5">Market Focus</div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Why Local SEO in This City */}
-      <section className="bg-[#FAF9F7] py-20 px-4 md:px-8">
+      <section className="bg-[#FAF9F7] py-16 px-4 md:px-8">
         <div className="mx-auto max-w-5xl">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 items-start">
             <FadeUp>
               <div>
                 <h2 className="text-3xl font-extrabold text-gray-900 mb-5">
@@ -184,7 +188,7 @@ export function LocationPageTemplate({ location }: LocationPageProps) {
         <div className="mx-auto max-w-3xl">
           <FadeUp>
             <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center">
-              FAQs — Local SEO in {location.name}
+              HVAC SEO FAQs — {location.name}
             </h2>
           </FadeUp>
           <div className="space-y-4">

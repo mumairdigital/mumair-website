@@ -1,20 +1,18 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Wind } from "lucide-react";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { SERVICES, SITE_CONFIG } from "@/lib/constants";
 import { buildServiceSchema, buildFAQSchema } from "@/lib/seo";
-import { MapPin, Monitor, Target, Share2, Search, Star } from "lucide-react";
+import { MapPin, Monitor, Star } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   MapPin,
   Monitor,
-  Target,
-  Share2,
-  Search,
+  Wind,
   Star,
 };
 
@@ -31,13 +29,13 @@ export async function generateMetadata({
   if (!service) return {};
 
   return {
-    title: `${service.title} for Home Service Businesses in USA & Canada | Muhammad Umair`,
-    description: `${service.description} Book a free consultation today.`,
-    alternates: { canonical: `${SITE_CONFIG.baseUrl}/services/${service.slug}` },
+    title: service.title + " for HVAC Companies | Muhammad Umair",
+    description: service.description + " Book a free HVAC audit today.",
+    alternates: { canonical: SITE_CONFIG.baseUrl + "/services/" + service.slug },
     openGraph: {
-      title: `${service.title} for HVAC, Plumbing & Roofing Companies | Muhammad Umair`,
+      title: service.title + " for HVAC Companies | Muhammad Umair",
       description: service.description,
-      url: `${SITE_CONFIG.baseUrl}/services/${service.slug}`,
+      url: SITE_CONFIG.baseUrl + "/services/" + service.slug,
     },
   };
 }
@@ -57,54 +55,55 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       {faqSchema && <JsonLd schema={faqSchema} />}
 
       {/* Hero */}
-      <section className="bg-[#0a0a0a] pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
+      <section className="bg-[#FAF9F7] pt-32 pb-16 px-4 md:px-8 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-purple-700 opacity-15" style={{ filter: "blur(100px)" }} />
+          <div className="absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-[#18055E] opacity-5" style={{ filter: "blur(120px)" }} />
         </div>
         <div className="relative mx-auto max-w-4xl text-center">
           <FadeUp>
-            <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-600 mx-auto mb-5 shadow-lg shadow-purple-500/30">
-              <Icon className="h-8 w-8 text-white" />
+            <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#18055E] to-[#2A0B7A] mx-auto mb-5 shadow-lg shadow-[#18055E]/30">
+              <Icon className="h-8 w-8 text-[#FEC33B]" />
             </div>
-            <h1 className="text-4xl font-extrabold text-white sm:text-5xl mb-4">
-              {service.title} for Home Service Businesses — {service.heroTagline}
+            <p className="text-[#FEC33B] text-xs font-bold uppercase tracking-[0.2em] mb-3">HVAC Local SEO</p>
+            <h1 className="text-4xl font-extrabold text-[#18055E] sm:text-5xl mb-4 leading-tight">
+              {service.title} for HVAC Companies
             </h1>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
+            <div className="h-1 w-16 bg-[#FEC33B] rounded-full mb-6 mx-auto" />
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
               {service.description}
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-purple-600 px-7 py-4 text-base font-semibold text-white shadow-lg shadow-purple-500/30 hover:bg-purple-500 hover:scale-105 transition-all duration-300 btn-glow"
-              >
-                {service.ctaText} <ArrowRight className="h-5 w-5" />
-              </Link>
-            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-[#18055E] px-7 py-4 text-base font-bold text-white shadow-lg shadow-[#18055E]/30 hover:bg-[#2A0B7A] hover:scale-105 transition-all duration-300"
+            >
+              {service.ctaText} <ArrowRight className="h-5 w-5" />
+            </Link>
           </FadeUp>
         </div>
       </section>
 
       {/* Result Highlight */}
-      <section className="bg-purple-600 py-8 px-4">
+      <section className="bg-[#18055E] py-8 px-4">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-purple-100 text-sm font-semibold uppercase tracking-wider mb-1">Proven Result</p>
+          <p className="text-[#FEC33B] text-xs font-bold uppercase tracking-[0.2em] mb-1">What This Delivers</p>
           <p className="text-2xl font-extrabold text-white">{service.results}</p>
         </div>
       </section>
 
-      {/* Features */}
+      {/* Features + Benefits */}
       <section className="bg-[#FAF9F7] py-20 px-4 md:px-8">
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-start">
             <FadeUp>
               <div>
-                <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
-                  What&apos;s Included in My {service.title} Service
+                <p className="text-[#FEC33B] text-xs font-bold uppercase tracking-[0.2em] mb-3">What&apos;s Included</p>
+                <h2 className="text-2xl font-extrabold text-[#18055E] mb-6">
+                  {service.title} — Full Scope
                 </h2>
                 <ul className="space-y-4">
                   {service.features.map((f) => (
                     <li key={f} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-purple-500 shrink-0 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-[#18055E] shrink-0 mt-0.5" />
                       <span className="text-gray-700">{f}</span>
                     </li>
                   ))}
@@ -114,14 +113,20 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 
             <FadeUp delay={0.1}>
               <div>
-                <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
-                  Benefits of {service.title} for Home Service Businesses
+                <p className="text-[#FEC33B] text-xs font-bold uppercase tracking-[0.2em] mb-3">The Impact</p>
+                <h2 className="text-2xl font-extrabold text-[#18055E] mb-6">
+                  What HVAC Companies Gain
                 </h2>
                 <div className="space-y-4">
                   {service.benefits.map((b) => (
-                    <div key={b.title} className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-                      <h3 className="font-bold text-gray-900 mb-1 text-sm">{b.title}</h3>
-                      <p className="text-gray-600 text-sm">{b.description}</p>
+                    <div key={b.title} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:border-[#18055E]/30 hover:shadow-md transition-all">
+                      <div className="flex items-start gap-3">
+                        <div className="h-2 w-2 rounded-full bg-[#FEC33B] shrink-0 mt-2" />
+                        <div>
+                          <h3 className="font-bold text-[#18055E] mb-1 text-sm">{b.title}</h3>
+                          <p className="text-gray-600 text-sm leading-relaxed">{b.description}</p>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -132,14 +137,14 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       </section>
 
       {/* Mid-page CTA */}
-      <section className="bg-purple-50 border-y border-purple-100 py-8 px-4">
+      <section className="bg-[#18055E]/5 border-y border-[#18055E]/10 py-8 px-4">
         <div className="mx-auto max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-700 font-semibold text-center sm:text-left">
-            Ready to grow your {service.title.toLowerCase()} results? Get a free strategy call.
+          <p className="text-[#18055E] font-semibold text-center sm:text-left">
+            Ready to get more HVAC calls from Google? Book a free audit.
           </p>
           <Link
             href="/contact"
-            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-sm font-bold text-white hover:bg-purple-700 transition-colors"
+            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-[#18055E] px-6 py-3 text-sm font-bold text-white hover:bg-[#2A0B7A] transition-colors"
           >
             Book Free Consultation <ArrowRight className="h-4 w-4" />
           </Link>
@@ -150,15 +155,18 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       <section className="bg-[#0a0a0a] py-20 px-4 md:px-8">
         <div className="mx-auto max-w-5xl">
           <FadeUp>
-            <h2 className="text-3xl font-extrabold text-white mb-10 text-center">
-              My {service.title} Process
-            </h2>
+            <div className="text-center mb-10">
+              <p className="text-[#FEC33B] text-xs font-bold uppercase tracking-[0.2em] mb-3">The Process</p>
+              <h2 className="text-3xl font-extrabold text-white">
+                How I Deliver {service.shortTitle} Results
+              </h2>
+            </div>
           </FadeUp>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {service.process.map((step, i) => (
               <FadeUp key={step.step} delay={i * 0.1}>
-                <div className="rounded-2xl border border-white/10 bg-zinc-900 p-6 card-hover">
-                  <div className="text-5xl font-black text-purple-500/20 mb-3">{step.step}</div>
+                <div className="rounded-2xl border border-white/10 bg-zinc-900 p-6 h-full">
+                  <div className="text-5xl font-black text-[#FEC33B]/20 mb-3">{step.step}</div>
                   <h3 className="font-bold text-white mb-2">{step.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
                 </div>
@@ -173,15 +181,15 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         <section className="bg-[#FAF9F7] py-16 px-4 md:px-8 border-t border-gray-100">
           <div className="mx-auto max-w-3xl">
             <FadeUp>
-              <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center">
-                {service.title} FAQs
+              <h2 className="text-2xl font-extrabold text-[#18055E] mb-8 text-center">
+                {service.shortTitle} FAQs
               </h2>
             </FadeUp>
             <div className="space-y-4">
               {service.faq.map((item, i) => (
                 <FadeUp key={i} delay={i * 0.08}>
-                  <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-                    <h3 className="font-bold text-gray-900 mb-2">{item.q}</h3>
+                  <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:border-[#18055E]/30 transition-colors">
+                    <h3 className="font-bold text-[#18055E] mb-2">{item.q}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{item.a}</p>
                   </div>
                 </FadeUp>
@@ -195,8 +203,8 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       <section className="bg-white py-16 px-4 md:px-8 border-t border-gray-100">
         <div className="mx-auto max-w-5xl">
           <FadeUp>
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center">
-              Related Services
+            <h2 className="text-2xl font-extrabold text-[#18055E] mb-8 text-center">
+              Other HVAC SEO Services
             </h2>
           </FadeUp>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -205,11 +213,11 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               return (
                 <FadeUp key={s.slug}>
                   <Link
-                    href={`/services/${s.slug}`}
-                    className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:border-purple-300 hover:shadow-md transition-all"
+                    href={"/services/" + s.slug}
+                    className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:border-[#18055E]/30 hover:shadow-md transition-all"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100 shrink-0">
-                      <SIcon className="h-5 w-5 text-purple-600" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#18055E]/10 shrink-0">
+                      <SIcon className="h-5 w-5 text-[#18055E]" />
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900 text-sm">{s.title}</div>
@@ -224,24 +232,26 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-purple-600 to-violet-700 py-16 px-4 md:px-8">
+      <section className="bg-gradient-to-br from-[#18055E] to-[#2A0B7A] py-16 px-4 md:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <FadeUp>
             <h2 className="text-3xl font-extrabold text-white mb-4">
-              Ready to Get Started with {service.title}?
+              Get More HVAC Calls With {service.shortTitle}
             </h2>
-            <p className="text-purple-100 text-lg mb-8">
-              Book a free consultation and get a custom strategy for your home service business.
+            <p className="text-blue-100 text-lg mb-8">
+              Book a free consultation and I&apos;ll show you exactly what the opportunity looks like for your HVAC company in your market.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-bold text-purple-600 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 rounded-full bg-[#FEC33B] px-8 py-4 text-base font-bold text-[#18055E] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
               {service.ctaText} <ArrowRight className="h-5 w-5" />
             </Link>
           </FadeUp>
         </div>
       </section>
+
+      <ContactSection />
     </>
   );
 }
