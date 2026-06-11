@@ -44,27 +44,27 @@ export function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
           scrolled
-            ? "bg-black/90 backdrop-blur-md border-b border-white/10 shadow-lg"
-            : "bg-[#0a0a0a]/85 backdrop-blur-sm"
+            ? "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm"
+            : "bg-white/90 backdrop-blur-sm border-b border-gray-100/60"
         )}
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#18055E] text-white font-bold text-xl shadow-lg shadow-[#18055E]/30 transition-transform group-hover:scale-105">
-              M
-            </div>
-            <span className="text-white font-semibold text-lg hidden sm:block">
-              Muhammad <span className="text-[#FEC33B]">Umair</span>
+            <span className="text-[#18055E] font-extrabold text-lg tracking-tight uppercase hidden sm:block">
+              Muhammad Umair
+            </span>
+            <span className="text-[#18055E] font-extrabold text-lg tracking-tight uppercase sm:hidden">
+              M. Umair
             </span>
           </Link>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-8">
-            <Link href="/" className="text-gray-300 hover:text-white text-sm font-medium transition-colors">
+            <Link href="/" className="text-gray-600 hover:text-[#18055E] text-sm font-medium transition-colors">
               Home
             </Link>
-            <Link href="/about" className="text-gray-300 hover:text-white text-sm font-medium transition-colors">
+            <Link href="/about" className="text-gray-600 hover:text-[#18055E] text-sm font-medium transition-colors">
               About
             </Link>
 
@@ -74,7 +74,7 @@ export function Navbar() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="flex items-center gap-1 text-gray-300 hover:text-white text-sm font-medium transition-colors">
+              <button className="flex items-center gap-1 text-gray-600 hover:text-[#18055E] text-sm font-medium transition-colors">
                 Services <ChevronDown className="h-4 w-4" />
               </button>
               <AnimatePresence>
@@ -113,10 +113,10 @@ export function Navbar() {
               </AnimatePresence>
             </div>
 
-            <Link href="/portfolio" className="text-gray-300 hover:text-white text-sm font-medium transition-colors">
+            <Link href="/portfolio" className="text-gray-600 hover:text-[#18055E] text-sm font-medium transition-colors">
               Portfolio
             </Link>
-            <Link href="/blog" className="text-gray-300 hover:text-white text-sm font-medium transition-colors">
+            <Link href="/blog" className="text-gray-600 hover:text-[#18055E] text-sm font-medium transition-colors">
               Blog
             </Link>
 
@@ -126,7 +126,7 @@ export function Navbar() {
               onMouseEnter={() => setLocationsOpen(true)}
               onMouseLeave={() => setLocationsOpen(false)}
             >
-              <button className="flex items-center gap-1 text-gray-300 hover:text-white text-sm font-medium transition-colors">
+              <button className="flex items-center gap-1 text-gray-600 hover:text-[#18055E] text-sm font-medium transition-colors">
                 Locations <ChevronDown className="h-4 w-4" />
               </button>
               <AnimatePresence>
@@ -157,7 +157,7 @@ export function Navbar() {
               </AnimatePresence>
             </div>
 
-            <Link href="/contact" className="text-gray-300 hover:text-white text-sm font-medium transition-colors">
+            <Link href="/contact" className="text-gray-600 hover:text-[#18055E] text-sm font-medium transition-colors">
               Contact
             </Link>
           </div>
@@ -166,16 +166,16 @@ export function Navbar() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-full bg-[#18055E] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#18055E]/30 transition-all duration-300 hover:bg-[#2A0B7A] hover:scale-105 btn-glow"
+              className="inline-flex items-center rounded-full bg-[#18055E] px-5 py-2.5 text-sm font-bold text-[#FEC33B] shadow-lg shadow-[#18055E]/20 transition-all duration-300 hover:bg-[#2A0B7A] hover:scale-105"
             >
-              Get Free Consultation
+              GET FREE HVAC AUDIT
             </Link>
           </div>
 
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+            className="lg:hidden text-[#18055E] p-2 rounded-lg hover:bg-gray-100 transition-colors"
             aria-label="Toggle mobile menu"
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -191,18 +191,18 @@ export function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed inset-0 z-30 bg-black flex flex-col pt-20 overflow-y-auto"
+            className="fixed inset-0 z-30 bg-white flex flex-col pt-20 overflow-y-auto"
           >
             <div className="flex flex-col px-6 py-6 gap-2">
               <Link
                 href="/"
-                className="text-lg font-medium text-white py-3 border-b border-white/10"
+                className="text-lg font-medium text-[#18055E] py-3 border-b border-gray-100"
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="text-lg font-medium text-white py-3 border-b border-white/10"
+                className="text-lg font-medium text-[#18055E] py-3 border-b border-gray-100"
               >
                 About
               </Link>
@@ -211,7 +211,7 @@ export function Navbar() {
               <div className="border-b border-white/10">
                 <button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className="flex w-full items-center justify-between py-3 text-lg font-medium text-white"
+                  className="flex w-full items-center justify-between py-3 text-lg font-medium text-[#18055E]"
                 >
                   Services
                   <ChevronDown
@@ -231,7 +231,7 @@ export function Navbar() {
                           <Link
                             key={s.href}
                             href={s.href}
-                            className="text-gray-300 py-2 pl-4 hover:text-purple-300 text-base"
+                            className="text-gray-600 py-2 pl-4 hover:text-[#18055E] text-base"
                           >
                             {s.label}
                           </Link>
@@ -244,13 +244,13 @@ export function Navbar() {
 
               <Link
                 href="/portfolio"
-                className="text-lg font-medium text-white py-3 border-b border-white/10"
+                className="text-lg font-medium text-[#18055E] py-3 border-b border-gray-100"
               >
                 Portfolio
               </Link>
               <Link
                 href="/blog"
-                className="text-lg font-medium text-white py-3 border-b border-white/10"
+                className="text-lg font-medium text-[#18055E] py-3 border-b border-gray-100"
               >
                 Blog
               </Link>
@@ -259,7 +259,7 @@ export function Navbar() {
               <div className="border-b border-white/10">
                 <button
                   onClick={() => setMobileLocationsOpen(!mobileLocationsOpen)}
-                  className="flex w-full items-center justify-between py-3 text-lg font-medium text-white"
+                  className="flex w-full items-center justify-between py-3 text-lg font-medium text-[#18055E]"
                 >
                   Locations
                   <ChevronDown
@@ -295,7 +295,7 @@ export function Navbar() {
 
               <Link
                 href="/contact"
-                className="text-lg font-medium text-white py-3 border-b border-white/10"
+                className="text-lg font-medium text-[#18055E] py-3 border-b border-gray-100"
               >
                 Contact
               </Link>
@@ -305,7 +305,7 @@ export function Navbar() {
             <div className="mt-auto px-6 pb-10 flex flex-col gap-3">
               <Link
                 href="/contact"
-                className="w-full rounded-full bg-[#18055E] py-4 text-center text-base font-semibold text-white shadow-lg shadow-[#18055E]/30 hover:bg-[#2A0B7A] transition-colors"
+                className="w-full rounded-full bg-[#18055E] py-4 text-center text-base font-bold text-[#FEC33B] shadow-lg shadow-[#18055E]/20 hover:bg-[#2A0B7A] transition-colors"
               >
                 Book Free Consultation
               </Link>
