@@ -15,7 +15,7 @@ const trustSignals = [
 export function HeroSection() {
   return (
     <section className="relative h-screen flex items-center overflow-hidden">
-      {/* Background image with strong navy overlay */}
+      {/* Background image — moderate overlay so it stays visible */}
       <div className="absolute inset-0">
         <Image
           src="/hero-bg.webp"
@@ -24,26 +24,25 @@ export function HeroSection() {
           priority
           className="object-cover object-center"
         />
-        {/* Full dark base layer so nothing bleeds through */}
-        <div className="absolute inset-0 bg-[#18055E]/70" />
-        {/* Directional gradient — left fully opaque, right shows more image */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0428] via-[#18055E]/80 to-[#18055E]/20" />
+        {/* Moderate overlay: left side darker for text legibility, right side lighter */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#18055E]/90 via-[#18055E]/65 to-[#18055E]/35" />
       </div>
 
-      <HeroOrbs />
+      {/* Gold accent line at bottom of hero */}
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#FEC33B]/60 via-[#FEC33B]/20 to-transparent z-20" />
 
       <div className="relative z-10 mx-auto max-w-7xl w-full px-4 md:px-8 pt-20">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_420px] lg:gap-16 items-center">
           {/* Left Content */}
           <div>
-            {/* Top Badge */}
+            {/* Eyebrow pill */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 rounded-full border border-[#FEC33B]/40 bg-[#FEC33B]/10 px-4 py-2 text-sm text-[#FEC33B] mb-5"
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 rounded-full border border-[#FEC33B]/40 bg-[#FEC33B]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#FEC33B] mb-5"
             >
-              <Wind className="h-4 w-4" />
+              <Wind className="h-3.5 w-3.5" />
               HVAC Local SEO Specialist — 2+ Years
             </motion.div>
 
@@ -52,122 +51,128 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl mb-3"
+              className="text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-[3.5rem] mb-4"
             >
               I Help HVAC Companies{" "}
               <span className="gradient-text">Get More Booked Calls</span>{" "}
               From Google
             </motion.h1>
 
-            {/* Sub Headline */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base font-semibold text-[#FEC33B] mb-4"
-            >
-              Local SEO · Google Business Profile · HVAC Websites
-            </motion.p>
+            {/* Gold divider line */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
+              className="origin-left h-[2px] w-24 bg-[#FEC33B] mb-4 rounded-full"
+            />
 
             {/* Description */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-gray-200 text-base leading-relaxed mb-6 max-w-lg"
+              className="text-gray-200 text-base leading-relaxed mb-7 max-w-[500px]"
             >
               When someone&apos;s AC breaks at 9pm they search &ldquo;AC repair near me&rdquo; and call the first company they see. I get you to that position — through Local SEO, Google Business Profile optimization, and websites built to convert. You work directly with me. No agency handoffs. No invented numbers.
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-4 mb-6"
+              className="flex flex-wrap gap-3 mb-8"
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-[#FEC33B] px-6 py-3.5 text-sm font-semibold text-[#18055E] shadow-lg shadow-[#FEC33B]/20 transition-all duration-300 hover:bg-yellow-300 hover:scale-105 btn-glow"
+                className="inline-flex items-center gap-2 rounded-full bg-[#FEC33B] px-7 py-3.5 text-sm font-bold text-[#18055E] shadow-lg shadow-[#FEC33B]/25 transition-all duration-300 hover:bg-yellow-300 hover:scale-105 btn-glow"
               >
-                Get Free Consultation <ArrowRight className="h-5 w-5" />
+                Get Free HVAC Audit <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/case-study"
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:border-white/70 hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/60 hover:bg-white/10"
               >
                 See Real Case Study
               </Link>
             </motion.div>
 
-            {/* Trust Signals */}
+            {/* Trust Signals — horizontal row */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="space-y-1.5"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+              className="flex flex-wrap gap-x-6 gap-y-2"
             >
               {trustSignals.map((signal) => (
-                <div key={signal} className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-[#FEC33B] shrink-0" />
-                  <span className="text-sm text-gray-200">{signal}</span>
+                <div key={signal} className="flex items-center gap-1.5">
+                  <CheckCircle className="h-3.5 w-3.5 text-[#FEC33B] shrink-0" />
+                  <span className="text-xs text-gray-300">{signal}</span>
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* Right — Headshot */}
+          {/* Right — Headshot — premium card */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative hidden lg:flex justify-center"
+            className="relative hidden lg:flex justify-center items-center"
           >
-            <div className="relative">
-              {/* Glow behind image */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#18055E] to-[#2A0B7A] opacity-40 blur-2xl scale-105" />
-              <div className="relative rounded-3xl overflow-hidden border border-[#FEC33B]/20 shadow-2xl shadow-[#18055E]/50 bg-gradient-to-br from-[#18055E]/50 to-[#2A0B7A]/30">
+            {/* Decorative ring */}
+            <div className="absolute inset-0 rounded-[2rem] border border-[#FEC33B]/15 scale-105" />
+            <div className="absolute inset-0 rounded-[2rem] border border-white/5 scale-110" />
+
+            <div className="relative w-full">
+              {/* Glow */}
+              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-[#FEC33B]/10 to-[#18055E]/60 blur-2xl scale-110" />
+
+              {/* Photo card */}
+              <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl" style={{ boxShadow: "0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(254,195,59,0.15)" }}>
                 <Image
                   src="/umair-headshot.webp"
                   alt="Muhammad Umair — HVAC Local SEO Specialist"
-                  width={380}
-                  height={420}
+                  width={420}
+                  height={460}
                   priority
-                  className="object-cover object-top"
-                  style={{ maxHeight: "420px" }}
+                  className="w-full object-cover object-top"
+                  style={{ maxHeight: "460px" }}
                 />
+                {/* Subtle gradient fade at bottom of photo */}
+                <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#18055E]/50 to-transparent" />
+              </div>
               </div>
 
               {/* Floating Badge — Specialist */}
               <motion.div
-                animate={{ y: [-5, 5, -5] }}
+                animate={{ y: [-4, 4, -4] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -left-4 flex items-center gap-2 rounded-xl bg-white px-3 py-2 shadow-xl"
+                className="absolute -top-3 -left-3 flex items-center gap-2.5 rounded-2xl bg-white/95 backdrop-blur-sm px-3.5 py-2.5 shadow-2xl border border-gray-100"
               >
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#18055E]/10">
-                  <Wind className="h-4 w-4 text-[#18055E]" />
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#18055E]">
+                  <Wind className="h-4 w-4 text-[#FEC33B]" />
                 </div>
                 <div>
                   <div className="text-xs font-bold text-gray-900">HVAC Specialist</div>
-                  <div className="text-xs text-gray-500">Primary Focus</div>
+                  <div className="text-[10px] text-gray-500 font-medium">Only Niche</div>
                 </div>
               </motion.div>
 
               {/* Floating Badge — Real Data */}
               <motion.div
-                animate={{ y: [5, -5, 5] }}
+                animate={{ y: [4, -4, 4] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -right-4 flex items-center gap-2 rounded-xl bg-white px-3 py-2 shadow-xl"
+                className="absolute -bottom-3 -right-3 flex items-center gap-2.5 rounded-2xl bg-white/95 backdrop-blur-sm px-3.5 py-2.5 shadow-2xl border border-gray-100"
               >
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FEC33B]/20">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FEC33B]">
                   <Phone className="h-4 w-4 text-[#18055E]" />
                 </div>
                 <div>
                   <div className="text-xs font-bold text-gray-900">Real Data</div>
-                  <div className="text-xs text-gray-500">Verifiable Results</div>
+                  <div className="text-[10px] text-gray-500 font-medium">GSC + GBP verified</div>
                 </div>
               </motion.div>
-            </div>
           </motion.div>
         </div>
       </div>
