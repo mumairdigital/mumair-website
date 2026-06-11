@@ -15,8 +15,8 @@ export function AboutSection() {
           <FadeUp>
             <div className="relative flex justify-center">
               <div className="relative">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-600 to-violet-700 opacity-20 blur-2xl scale-105" />
-                <div className="relative rounded-3xl overflow-hidden border border-purple-200 shadow-2xl bg-gradient-to-br from-purple-50 to-violet-50">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#18055E] to-[#2A0B7A] opacity-20 blur-2xl scale-105" />
+                <div className="relative rounded-3xl overflow-hidden border border-[#18055E]/20 shadow-2xl bg-gradient-to-br from-[#18055E]/5 to-[#2A0B7A]/10">
                   <Image
                     src="/umair-headshot.webp"
                     alt="Muhammad Umair — HVAC Local SEO Specialist"

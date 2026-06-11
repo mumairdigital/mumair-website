@@ -7,9 +7,9 @@ import { ArrowRight, CheckCircle, Phone, Wind } from "lucide-react";
 import { HeroOrbs } from "@/components/animations/HeroOrbs";
 
 const trustSignals = [
-  "HVAC is my primary niche — not a side offering",
+  "HVAC is my only niche — not a side offering",
   "You work directly with me, not a junior handler",
-  "Real data: Search Console & GMB screenshots provided",
+  "Real data: Search Console and GBP screenshots provided",
 ];
 
 export function HeroSection() {
@@ -63,7 +63,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl font-semibold text-[#FEC33B]/90 mb-5"
             >
-              Local SEO · Google Business Profile · Google Ads
+              Local SEO · Google Business Profile · HVAC Websites
             </motion.p>
 
             {/* Description */}
@@ -73,7 +73,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-gray-300 text-lg leading-relaxed mb-8 max-w-lg"
             >
-              When someone searches &ldquo;AC repair near me&rdquo; at 9pm, the HVAC company on page one gets the call. I help you be that company — through Local SEO, GBP optimization, and targeted Google Ads. I work directly with you. No agency handoffs. No invented numbers.
+              When someone&apos;s AC breaks at 9pm they search &ldquo;AC repair near me&rdquo; and call the first company they see. I get you to that position — through Local SEO, Google Business Profile optimization, and websites built to convert. You work directly with me. No agency handoffs. No invented numbers.
             </motion.p>
 
             {/* CTA Buttons */}

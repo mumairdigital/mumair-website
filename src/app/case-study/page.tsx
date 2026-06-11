@@ -1,86 +1,73 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ShieldAlert, ShieldCheck, TrendingUp, Search, MapPin } from "lucide-react";
+import { ArrowRight, TrendingUp, Search, MapPin, AlertCircle } from "lucide-react";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Case Study: Recovering Local Visibility After a Malware Attack | Muhammad Umair",
+  title: "Case Study: Recovering a Local Business That Had Vanished From Google | Muhammad Umair",
   description:
-    "How I cleaned a malware infection, removed 15,000+ spam indexed pages, and rebuilt the local SEO foundation for a UK home-improvement business. Real Search Console and GMB screenshots included.",
+    "How I rebuilt the local SEO foundation for a local business whose Google visibility had collapsed. Real Search Console and Google Business Profile screenshots included.",
   alternates: { canonical: `${SITE_CONFIG.baseUrl}/case-study` },
   openGraph: {
-    title: "Case Study: Recovering Local Visibility After a Malware Attack",
-    description: "Real Search Console and GMB data showing recovery after malware cleanup and local SEO rebuild.",
+    title: "Case Study: Recovering a Local Business That Had Vanished From Google",
+    description: "Real Search Console and GBP data showing recovery after a full local SEO rebuild.",
     url: `${SITE_CONFIG.baseUrl}/case-study`,
   },
 };
 
 const timeline = [
   {
-    icon: ShieldAlert,
+    icon: AlertCircle,
     color: "text-red-500",
     bg: "bg-red-100",
     phase: "Discovery",
-    title: "Malware found, site trust collapsed",
+    title: "Google visibility had collapsed",
     details: [
-      "Trojan plugin installed by attacker — created backdoor admin accounts",
-      "15,000+ spam pages quietly indexed on Google over time",
-      "Organic search rankings had collapsed; local visibility near zero",
-      "Google trust signals severely damaged",
-    ],
-  },
-  {
-    icon: ShieldCheck,
-    color: "text-orange-500",
-    bg: "bg-orange-100",
-    phase: "Cleanup & Security",
-    title: "Malware removed, site secured",
-    details: [
-      "Identified and removed the trojan plugin and all injected files",
-      "Deleted all backdoor admin accounts and reset credentials",
-      "Hardened WordPress security to prevent re-infection",
-      "Requested Google Search Console reconsideration after cleanup",
+      "Rankings gone — not appearing for local searches that used to bring in customers",
+      "Organic search traffic flatlined in Google Search Console",
+      "Local visibility near zero despite the business being established",
+      "Technical issues on the site holding back any recovery",
     ],
   },
   {
     icon: Search,
     color: "text-blue-500",
     bg: "bg-blue-100",
-    phase: "Spam Removal",
-    title: "15,000+ spam pages purged from Google",
+    phase: "Technical Fixes",
+    title: "Technical issues identified and resolved",
     details: [
-      "Identified the full scope of spam-indexed pages via Search Console",
-      "Removed all spam content from the site",
-      "Used proper removal tools and noindex directives to deindex remaining pages",
-      "Monitored index coverage over weeks to confirm cleanup was complete",
+      "Full technical SEO audit via Google Search Console and crawl tools",
+      "Identified and fixed crawl errors, indexing issues, and page structure problems",
+      "Restructured the site for local search — page titles, headers, meta data, internal linking",
+      "Schema markup added for local business signals",
     ],
   },
   {
     icon: MapPin,
     color: "text-[#18055E]",
     bg: "bg-[#18055E]/10",
-    phase: "Local SEO Rebuild",
-    title: "Local search foundation rebuilt",
+    phase: "GBP Optimization",
+    title: "Google Business Profile rebuilt and optimised",
     details: [
-      "Rebuilt and fully optimized the Google Business Profile",
-      "Audited and fixed citation consistency across directories",
-      "Rebuilt on-page local SEO signals (title tags, schema, NAP)",
-      "Established a review generation process to rebuild trust signals",
+      "Complete audit of the existing GBP — gaps, missing categories, incomplete attributes",
+      "Full profile optimisation: categories, services, description, photos, attributes",
+      "Google Posts strategy implemented and maintained",
+      "Citation consistency audited and fixed across key directories",
     ],
   },
   {
     icon: TrendingUp,
     color: "text-green-600",
     bg: "bg-green-100",
-    phase: "Results",
-    title: "Visibility recovering — real data below",
+    phase: "Reviews & Reporting",
+    title: "Review system and reporting in place",
     details: [
-      "[X% increase in organic clicks — you'll add the exact figure here]",
-      "[GMB impressions grew from A to B between date range]",
-      "[GMB calls grew from A to B between date range]",
-      "Spam index fully cleared; site now clean and secure",
+      "Review generation system set up — consistent flow of real reviews from customers",
+      "Monthly reporting from Google Search Console and GBP Insights",
+      "Ranking tracking for target local keywords",
+      "Ongoing optimisation based on real data, not guesswork",
     ],
   },
 ];
@@ -94,17 +81,17 @@ export default function CaseStudyPage() {
         <div className="relative mx-auto max-w-4xl text-center">
           <FadeUp>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#FEC33B]/30 bg-[#FEC33B]/10 px-4 py-2 text-sm text-[#FEC33B] mb-6">
-              <ShieldCheck className="h-4 w-4" />
+              <TrendingUp className="h-4 w-4" />
               Case Study · Home Improvement · Birmingham, UK
             </div>
             <h1 className="text-4xl font-extrabold text-white sm:text-5xl mb-5 leading-tight">
-              How I Recovered and Grew a Home-Improvement Business&apos;s Local Visibility
+              Case Study: Recovering a Local Business That Had Vanished From Google
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-              A UK tile retailer (Birmingham) came to me with a serious malware infection — trojan plugin, backdoor admin accounts, 15,000+ spam pages indexed on Google, and collapsing rankings. Here&apos;s exactly what I found, what I did, and what the data shows.
+              A local business whose Google visibility had collapsed — rankings gone, search traffic flatlined, barely showing up for the local searches that brought in customers. Here&apos;s what I did and what the data shows.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              {["Malware Cleanup", "Technical SEO", "Local SEO", "GBP Optimization"].map((tag) => (
+              {["Technical SEO", "Local SEO", "GBP Optimization", "Reviews System"].map((tag) => (
                 <span key={tag} className="rounded-full border border-[#FEC33B]/30 bg-[#FEC33B]/10 px-4 py-1.5 text-xs font-semibold text-[#FEC33B]">
                   {tag}
                 </span>
@@ -121,10 +108,13 @@ export default function CaseStudyPage() {
             <div className="rounded-2xl border border-white/10 bg-zinc-900 p-8">
               <h2 className="text-xl font-bold text-white mb-4">Background</h2>
               <p className="text-gray-400 leading-relaxed mb-4">
-                The client is a tile retailer based in Birmingham, UK — a home-improvement business serving residential and trade customers in the local area. They had built up some local search presence over the years, but after an attacker gained access through a vulnerable plugin, their situation deteriorated quickly.
+                A local tile retailer based in Birmingham, UK — a home-improvement business serving residential and trade customers. They had built up local search presence over the years, but Google visibility had collapsed. Rankings were gone and search traffic had flatlined.
               </p>
-              <p className="text-gray-400 leading-relaxed">
-                By the time they reached out, Google had indexed over 15,000 spam pages from their domain. Organic visibility had collapsed and the site was being flagged in Google Search Console. Local ranking had essentially disappeared.
+              <p className="text-gray-400 leading-relaxed mb-4">
+                By the time they reached out, they were barely showing up for the local searches that had previously brought in customers. I rebuilt the local SEO foundation from scratch — technical fixes, site restructure, GBP optimisation, and a review system.
+              </p>
+              <p className="text-[#FEC33B]/80 text-sm leading-relaxed border border-[#FEC33B]/20 rounded-xl p-4">
+                Data is straight from Google Search Console and Google Business Profile dashboard — verifiable. This is the same system I build for HVAC companies. Local search works the same whether it is a tile retailer in Birmingham or an AC company in Cape Coral.
               </p>
             </div>
           </FadeUp>
@@ -181,25 +171,25 @@ export default function CaseStudyPage() {
               Search Console — Before &amp; After
             </h2>
             <p className="text-gray-500 text-center mb-10 max-w-xl mx-auto">
-              These screenshots are from Google Search Console. You can see the spam-injection period and the recovery trajectory after cleanup.
+              These screenshots are from Google Search Console. The data is real and verifiable.
             </p>
           </FadeUp>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mb-12">
             <FadeUp delay={0.05}>
               <div>
-                <p className="text-sm font-semibold text-red-600 uppercase tracking-wider mb-3">Before — Spam Period + Ranking Collapse</p>
+                <p className="text-sm font-semibold text-red-600 uppercase tracking-wider mb-3">Before — Visibility Collapsed</p>
                 <div className="rounded-2xl overflow-hidden border border-red-200 shadow-md">
                   <Image
                     src="/mhtiles-search-console-before.jpeg"
-                    alt="MH Tiles Google Search Console screenshot before malware cleanup — showing spam pages and collapsed organic traffic"
+                    alt="Google Search Console screenshot before — showing collapsed organic traffic"
                     width={700}
                     height={400}
                     className="w-full object-cover"
                   />
                 </div>
                 <p className="text-xs text-gray-500 mt-2">
-                  Organic impressions and clicks dropped sharply after spam pages were injected and Google began penalizing the domain.
+                  Organic impressions and clicks had dropped sharply. The business was not appearing for local searches that had previously brought in customers.
                 </p>
               </div>
             </FadeUp>
@@ -210,14 +200,14 @@ export default function CaseStudyPage() {
                 <div className="rounded-2xl overflow-hidden border border-green-200 shadow-md">
                   <Image
                     src="/mhtiles-search-console-after.png"
-                    alt="MH Tiles Google Search Console screenshot after malware cleanup and local SEO rebuild — showing recovering organic traffic"
+                    alt="Google Search Console screenshot after local SEO rebuild — showing recovering organic traffic"
                     width={700}
                     height={400}
                     className="w-full object-cover"
                   />
                 </div>
                 <p className="text-xs text-gray-500 mt-2">
-                  After cleanup, spam removal, and local SEO rebuild — organic visibility recovering. Exact figures: [X% increase in clicks, date range — fill in].
+                  After technical fixes, site restructure, and local SEO rebuild — organic visibility recovering. Data straight from Google Search Console.
                 </p>
               </div>
             </FadeUp>
@@ -230,46 +220,17 @@ export default function CaseStudyPage() {
               <div className="rounded-2xl overflow-hidden border border-[#18055E]/20 shadow-md max-w-2xl mx-auto">
                 <Image
                   src="/mhtiles-gmb-impressions.png"
-                  alt="MH Tiles Google Business Profile impressions chart showing growth after GBP optimization"
+                  alt="Google Business Profile impressions chart showing growth after GBP optimization"
                   width={800}
                   height={400}
                   className="w-full object-cover"
                 />
               </div>
               <p className="text-xs text-gray-500 mt-2 text-center max-w-xl mx-auto">
-                GBP impressions trend after rebuilding the Google Business Profile and local SEO foundation. GMB calls: [A to B, date range — fill in].
+                GBP impressions trend after rebuilding and optimising the Google Business Profile. Data from Google Business Profile dashboard.
               </p>
             </div>
           </FadeUp>
-        </div>
-      </section>
-
-      {/* Results Summary */}
-      <section className="bg-[#FAF9F7] py-16 px-4 md:px-8 border-t border-gray-100">
-        <div className="mx-auto max-w-4xl">
-          <FadeUp>
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-6 text-center">Results Summary</h2>
-            <p className="text-gray-500 text-center mb-8 max-w-lg mx-auto text-sm">
-              I&apos;ll fill in the exact numbers shortly. Placeholders marked below.
-            </p>
-          </FadeUp>
-
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {[
-              { label: "Spam Pages Removed", value: "15,000+", verified: true },
-              { label: "Organic Click Growth", value: "[X%]", verified: false },
-              { label: "GMB Call Growth", value: "[A → B]", verified: false },
-              { label: "Security Status", value: "Clean", verified: true },
-            ].map((m) => (
-              <FadeUp key={m.label}>
-                <div className={`rounded-2xl border p-5 text-center ${m.verified ? "border-[#18055E]/20 bg-white" : "border-dashed border-gray-300 bg-white"}`}>
-                  <div className={`text-2xl font-extrabold mb-1 ${m.verified ? "text-[#18055E]" : "text-gray-400"}`}>{m.value}</div>
-                  <div className="text-xs text-gray-500">{m.label}</div>
-                  {!m.verified && <div className="text-xs text-amber-500 mt-1">Placeholder</div>}
-                </div>
-              </FadeUp>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -278,16 +239,16 @@ export default function CaseStudyPage() {
         <div className="mx-auto max-w-3xl text-center">
           <FadeUp>
             <h2 className="text-3xl font-extrabold text-white mb-4">
-              Dealing with a similar problem — or just want more calls?
+              Want the same system built for your HVAC company?
             </h2>
             <p className="text-blue-100 text-lg mb-8">
-              Get a free consultation. I&apos;ll look at your current setup and tell you honestly what I think the opportunity is.
+              Free HVAC visibility audit — I&apos;ll review your GBP, site, and local rankings and tell you honestly what I think the opportunity is.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-[#FEC33B] px-8 py-4 text-base font-bold text-[#18055E] shadow-lg hover:bg-yellow-300 hover:scale-105 transition-all duration-300"
             >
-              Get a Free Consultation <ArrowRight className="h-5 w-5" />
+              Get a Free HVAC Visibility Audit <ArrowRight className="h-5 w-5" />
             </Link>
           </FadeUp>
         </div>

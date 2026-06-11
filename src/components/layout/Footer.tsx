@@ -28,7 +28,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              I help HVAC companies get more booked calls from Google — through Local SEO, GBP optimization, and targeted Google Ads. Based remotely, serving the US market.
+              I help HVAC companies get more booked calls from Google — through Local SEO, Google Business Profile optimization, and websites built to convert. Remote — Serving USA.
             </p>
             <div className="flex items-center gap-3">
               <a
@@ -113,6 +113,9 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <span className="text-gray-600 text-sm italic">More cities coming soon</span>
+              </li>
             </ul>
           </div>
 

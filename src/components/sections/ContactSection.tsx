@@ -89,10 +89,10 @@ export function ContactSection() {
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    "2+ Years Specialized Experience",
-                    "Proven Results for Home Services",
-                    "Home Services Specialist",
-                    "24/7 Communication via WhatsApp",
+                    "HVAC is my only niche — not a side offering",
+                    "You work directly with me, not an account manager",
+                    "Real data from Google Search Console and GBP",
+                    "Month-to-month — no long-term contracts",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-gray-300">
                       <CheckCircle className="h-4 w-4 text-[#FEC33B] shrink-0" />

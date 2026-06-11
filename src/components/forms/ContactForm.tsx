@@ -86,7 +86,7 @@ export function ContactForm() {
             type="text"
             placeholder="John Smith"
             {...register("name")}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-colors"
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#FEC33B] focus:outline-none focus:ring-1 focus:ring-[#FEC33B] transition-colors"
           />
           {errors.name && (
             <p className="mt-1 text-xs text-red-400">{errors.name.message}</p>
@@ -101,7 +101,7 @@ export function ContactForm() {
             type="email"
             placeholder="john@company.com"
             {...register("email")}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-colors"
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#FEC33B] focus:outline-none focus:ring-1 focus:ring-[#FEC33B] transition-colors"
           />
           {errors.email && (
             <p className="mt-1 text-xs text-red-400">{errors.email.message}</p>
@@ -120,7 +120,7 @@ export function ContactForm() {
             type="tel"
             placeholder="+1 (555) 000-0000"
             {...register("phone")}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-colors"
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#FEC33B] focus:outline-none focus:ring-1 focus:ring-[#FEC33B] transition-colors"
           />
         </div>
         <div>
@@ -130,14 +130,10 @@ export function ContactForm() {
           <select
             id="businessType"
             {...register("businessType")}
-            className="w-full rounded-xl border border-white/10 bg-zinc-800 px-4 py-3 text-sm text-white focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-colors appearance-none"
+            className="w-full rounded-xl border border-white/10 bg-zinc-800 px-4 py-3 text-sm text-white focus:border-[#FEC33B] focus:outline-none focus:ring-1 focus:ring-[#FEC33B] transition-colors appearance-none"
           >
             <option value="">Select your industry</option>
             <option value="HVAC">HVAC</option>
-            <option value="Plumbing">Plumbing</option>
-            <option value="Roofing">Roofing</option>
-            <option value="Electrical">Electrical</option>
-            <option value="Landscaping">Landscaping</option>
             <option value="Other">Other</option>
           </select>
           {errors.businessType && (
@@ -157,7 +153,7 @@ export function ContactForm() {
             type="text"
             placeholder="Houston, TX"
             {...register("city")}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-colors"
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#FEC33B] focus:outline-none focus:ring-1 focus:ring-[#FEC33B] transition-colors"
           />
         </div>
         <div>
@@ -167,16 +163,14 @@ export function ContactForm() {
           <select
             id="serviceInterest"
             {...register("serviceInterest")}
-            className="w-full rounded-xl border border-white/10 bg-zinc-800 px-4 py-3 text-sm text-white focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-colors appearance-none"
+            className="w-full rounded-xl border border-white/10 bg-zinc-800 px-4 py-3 text-sm text-white focus:border-[#FEC33B] focus:outline-none focus:ring-1 focus:ring-[#FEC33B] transition-colors appearance-none"
           >
             <option value="">Select a service</option>
+            <option value="Google Business Profile">GBP Optimization</option>
             <option value="Local SEO">Local SEO</option>
-            <option value="Google Ads">Google Ads</option>
-            <option value="Meta Ads">Meta Ads</option>
-            <option value="Web Design">Web Design</option>
+            <option value="Web Design">HVAC Website</option>
+            <option value="Reviews & Reputation">Reviews & Reputation</option>
             <option value="SEO Audit">SEO Audit</option>
-            <option value="Google Business Profile">Google Business Profile</option>
-            <option value="Full Package">Full Package</option>
           </select>
           {errors.serviceInterest && (
             <p className="mt-1 text-xs text-red-400">{errors.serviceInterest.message}</p>
@@ -194,7 +188,7 @@ export function ContactForm() {
           rows={5}
           placeholder="Tell me about your business, current marketing challenges, and what results you're looking for..."
           {...register("message")}
-          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-colors resize-none"
+          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-[#FEC33B] focus:outline-none focus:ring-1 focus:ring-[#FEC33B] transition-colors resize-none"
         />
         {errors.message && (
           <p className="mt-1 text-xs text-red-400">{errors.message.message}</p>
@@ -212,7 +206,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-purple-600 py-4 text-base font-bold text-white shadow-lg shadow-purple-500/30 transition-all duration-300 hover:bg-purple-500 hover:shadow-purple-400/50 hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed btn-glow"
+        className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#18055E] py-4 text-base font-bold text-white shadow-lg shadow-[#18055E]/30 transition-all duration-300 hover:bg-[#2A0B7A] hover:shadow-[#18055E]/50 hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed btn-glow"
       >
         {status === "loading" ? (
           <>

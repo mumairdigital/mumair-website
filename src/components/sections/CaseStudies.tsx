@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ShieldCheck, TrendingUp } from "lucide-react";
+import { ArrowRight, AlertCircle, TrendingUp } from "lucide-react";
 import { FadeUp } from "@/components/animations/FadeUp";
 
 export function CaseStudies() {
@@ -13,10 +13,10 @@ export function CaseStudies() {
               Real Work, Real Data
             </p>
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-3">
-              Case Study: Recovering Local Visibility After a Malware Attack
+              Case Study: Recovering a Local Business That Had Vanished From Google
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              A UK tile retailer (Birmingham) came to me with 15,000+ spam pages indexed on Google and a collapsing local presence. Here&apos;s what I found and what I did about it.
+              Data straight from Google Search Console and Google Business Profile — verifiable.
             </p>
           </div>
         </FadeUp>
@@ -28,20 +28,20 @@ export function CaseStudies() {
               <div className="p-8 lg:p-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100">
-                    <ShieldCheck className="h-5 w-5 text-red-600" />
+                    <AlertCircle className="h-5 w-5 text-red-600" />
                   </div>
                   <div>
                     <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">Problem</p>
-                    <p className="text-sm font-bold text-gray-900">Malware, spam & collapsing Google trust</p>
+                    <p className="text-sm font-bold text-gray-900">Google visibility had collapsed</p>
                   </div>
                 </div>
 
                 <ul className="space-y-3 mb-8">
                   {[
-                    "Trojan plugin installed — backdoor admin accounts created",
-                    "15,000+ spam pages indexed on Google",
-                    "Rankings dropped, search visibility nearly gone",
-                    "Google trust and local SEO foundation collapsed",
+                    "Rankings gone — not appearing for local searches",
+                    "Search traffic flatlined in Google Search Console",
+                    "Barely showing up for the local searches that brought in customers",
+                    "Local SEO foundation needed rebuilding from scratch",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
                       <span className="mt-1 h-1.5 w-1.5 rounded-full bg-red-400 shrink-0" />
@@ -56,17 +56,17 @@ export function CaseStudies() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">What I Did</p>
-                    <p className="text-sm font-bold text-gray-900">Cleaned, secured & rebuilt from scratch</p>
+                    <p className="text-sm font-bold text-gray-900">Rebuilt the local SEO foundation from scratch</p>
                   </div>
                 </div>
 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-6">
                   {[
-                    "Removed malware, trojan plugin & backdoor accounts",
-                    "Identified & removed all 15,000+ spam indexed pages",
-                    "Hardened site security to prevent re-infection",
-                    "Rebuilt Google Business Profile & local SEO foundation",
-                    "Rebuilt citation consistency & on-page local signals",
+                    "Fixed the technical issues holding the site back",
+                    "Restructured the site for local search",
+                    "Optimised the Google Business Profile completely",
+                    "Built citation consistency across directories",
+                    "Put a review generation and reporting system in place",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
                       <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#18055E] shrink-0" />
@@ -74,6 +74,10 @@ export function CaseStudies() {
                     </li>
                   ))}
                 </ul>
+
+                <p className="text-xs text-gray-500 mb-6 italic">
+                  This is the same system I build for HVAC companies. Local search works the same whether it is a tile retailer in Birmingham or an AC company in Cape Coral.
+                </p>
 
                 <Link
                   href="/case-study"
@@ -90,7 +94,7 @@ export function CaseStudies() {
                   <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
                     <Image
                       src="/mhtiles-search-console-before.jpeg"
-                      alt="MH Tiles Search Console — before malware cleanup showing collapsed organic traffic"
+                      alt="MH Tiles Search Console — before showing collapsed organic traffic"
                       width={520}
                       height={260}
                       className="w-full object-cover"
@@ -102,7 +106,7 @@ export function CaseStudies() {
                   <div className="rounded-xl overflow-hidden border border-[#18055E]/20 shadow-sm">
                     <Image
                       src="/mhtiles-search-console-after.png"
-                      alt="MH Tiles Search Console — after malware cleanup and local SEO rebuild showing recovered organic traffic"
+                      alt="MH Tiles Search Console — after local SEO rebuild showing recovering organic traffic"
                       width={520}
                       height={260}
                       className="w-full object-cover"
