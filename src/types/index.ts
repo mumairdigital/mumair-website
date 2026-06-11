@@ -12,7 +12,7 @@ export interface Location {
     businesses: string;
     homeServices: string;
   };
-  testimonial: {
+  testimonial?: {
     author: string;
     company: string;
     role: string;

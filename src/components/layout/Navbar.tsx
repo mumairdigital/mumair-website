@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
-import { NAV_SERVICES, NAV_LOCATIONS_USA, NAV_LOCATIONS_CANADA } from "@/lib/constants";
+import { NAV_SERVICES, NAV_LOCATIONS_USA } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -51,11 +51,11 @@ export function Navbar() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-600 text-white font-bold text-xl shadow-lg shadow-purple-500/30 transition-transform group-hover:scale-105">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#18055E] text-white font-bold text-xl shadow-lg shadow-[#18055E]/30 transition-transform group-hover:scale-105">
               M
             </div>
             <span className="text-white font-semibold text-lg hidden sm:block">
-              Muhammad <span className="text-purple-400">Umair</span>
+              Muhammad <span className="text-[#FEC33B]">Umair</span>
             </span>
           </Link>
 
@@ -91,9 +91,9 @@ export function Navbar() {
                         <Link
                           key={s.href}
                           href={s.href}
-                          className="flex flex-col rounded-xl px-4 py-3 hover:bg-purple-600/20 transition-colors group"
+                          className="flex flex-col rounded-xl px-4 py-3 hover:bg-[#18055E]/20 transition-colors group"
                         >
-                          <span className="text-sm font-medium text-white group-hover:text-purple-300">
+                          <span className="text-sm font-medium text-white group-hover:text-[#FEC33B]">
                             {s.label}
                           </span>
                           <span className="text-xs text-gray-400">{s.description}</span>
@@ -103,7 +103,7 @@ export function Navbar() {
                     <div className="mt-2 pt-2 border-t border-white/10">
                       <Link
                         href="/services"
-                        className="text-xs text-purple-400 hover:text-purple-300 flex items-center gap-1"
+                        className="text-xs text-[#FEC33B] hover:text-purple-300 flex items-center gap-1"
                       >
                         View all services <ChevronRight className="h-3 w-3" />
                       </Link>
@@ -138,29 +138,15 @@ export function Navbar() {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full right-0 mt-2 w-72 rounded-2xl bg-zinc-900 border border-white/10 shadow-xl p-4"
                   >
-                    <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2 px-2">
-                      USA
+                    <p className="text-xs font-semibold text-[#FEC33B] uppercase tracking-wider mb-2 px-2">
+                      Service Areas
                     </p>
-                    <div className="grid grid-cols-2 gap-1 mb-3">
+                    <div className="grid grid-cols-2 gap-1">
                       {NAV_LOCATIONS_USA.map((l) => (
                         <Link
                           key={l.href}
                           href={l.href}
-                          className="text-sm text-gray-300 hover:text-purple-300 rounded-lg px-2 py-1.5 hover:bg-purple-600/20 transition-colors"
-                        >
-                          {l.label}
-                        </Link>
-                      ))}
-                    </div>
-                    <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2 px-2">
-                      Canada
-                    </p>
-                    <div className="grid grid-cols-2 gap-1">
-                      {NAV_LOCATIONS_CANADA.map((l) => (
-                        <Link
-                          key={l.href}
-                          href={l.href}
-                          className="text-sm text-gray-300 hover:text-purple-300 rounded-lg px-2 py-1.5 hover:bg-purple-600/20 transition-colors"
+                          className="text-sm text-gray-300 hover:text-[#FEC33B] rounded-lg px-2 py-1.5 hover:bg-[#18055E]/20 transition-colors"
                         >
                           {l.label}
                         </Link>
@@ -180,7 +166,7 @@ export function Navbar() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-full bg-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-purple-500/30 transition-all duration-300 hover:bg-purple-500 hover:shadow-purple-400/50 hover:scale-105 btn-glow"
+              className="inline-flex items-center rounded-full bg-[#18055E] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#18055E]/30 transition-all duration-300 hover:bg-[#2A0B7A] hover:scale-105 btn-glow"
             >
               Get Free Consultation
             </Link>
@@ -289,26 +275,14 @@ export function Navbar() {
                       className="overflow-hidden"
                     >
                       <div className="pb-3">
-                        <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider pl-4 mb-2">
-                          USA
+                        <p className="text-xs font-semibold text-[#FEC33B] uppercase tracking-wider pl-4 mb-2">
+                          Service Areas
                         </p>
                         {NAV_LOCATIONS_USA.map((l) => (
                           <Link
                             key={l.href}
                             href={l.href}
-                            className="text-gray-300 py-2 pl-4 block hover:text-purple-300 text-base"
-                          >
-                            {l.label}
-                          </Link>
-                        ))}
-                        <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider pl-4 mt-3 mb-2">
-                          Canada
-                        </p>
-                        {NAV_LOCATIONS_CANADA.map((l) => (
-                          <Link
-                            key={l.href}
-                            href={l.href}
-                            className="text-gray-300 py-2 pl-4 block hover:text-purple-300 text-base"
+                            className="text-gray-300 py-2 pl-4 block hover:text-[#FEC33B] text-base"
                           >
                             {l.label}
                           </Link>
@@ -331,7 +305,7 @@ export function Navbar() {
             <div className="mt-auto px-6 pb-10 flex flex-col gap-3">
               <Link
                 href="/contact"
-                className="w-full rounded-full bg-purple-600 py-4 text-center text-base font-semibold text-white shadow-lg shadow-purple-500/30 hover:bg-purple-500 transition-colors"
+                className="w-full rounded-full bg-[#18055E] py-4 text-center text-base font-semibold text-white shadow-lg shadow-[#18055E]/30 hover:bg-[#2A0B7A] transition-colors"
               >
                 Book Free Consultation
               </Link>

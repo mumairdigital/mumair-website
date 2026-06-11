@@ -1,13 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, Clock, MapPin } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ShieldCheck, TrendingUp } from "lucide-react";
 import { FadeUp } from "@/components/animations/FadeUp";
-import { CASE_STUDIES } from "@/lib/constants";
-
-const badgeColors: Record<string, string> = {
-  blue: "bg-blue-500/20 text-blue-400",
-  green: "bg-green-500/20 text-green-400",
-  purple: "bg-purple-500/20 text-purple-400",
-};
 
 export function CaseStudies() {
   return (
@@ -15,84 +9,108 @@ export function CaseStudies() {
       <div className="mx-auto max-w-7xl">
         <FadeUp>
           <div className="text-center mb-12">
-            <p className="text-purple-600 text-sm font-semibold uppercase tracking-wider mb-3">
-              Success Stories
+            <p className="text-[#18055E] text-sm font-semibold uppercase tracking-wider mb-3">
+              Real Work, Real Data
             </p>
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-3">
-              Real Projects, Real Results
+              Case Study: Recovering Local Visibility After a Malware Attack
             </h2>
-            <p className="text-gray-600 text-lg">
-              Verified case studies from home service businesses across USA & Canada
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              A UK tile retailer (Birmingham) came to me with 15,000+ spam pages indexed on Google and a collapsing local presence. Here&apos;s what I found and what I did about it.
             </p>
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 mb-10">
-          {CASE_STUDIES.map((study, i) => (
-            <FadeUp key={study.id} delay={i * 0.1}>
-              <div className="rounded-2xl bg-white border border-gray-100 shadow-lg overflow-hidden card-hover h-full flex flex-col">
-                {/* Header */}
-                <div className="bg-gradient-to-r from-purple-600/10 to-violet-600/10 border-b border-gray-100 p-5">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className={`rounded-full px-3 py-1 text-xs font-semibold ${badgeColors[study.badgeColor]}`}>
-                      {study.badge}
-                    </span>
-                    <div className="flex items-center gap-1 text-xs text-gray-500">
-                      <Clock className="h-3.5 w-3.5" />
-                      {study.duration}
-                    </div>
+        <FadeUp delay={0.1}>
+          <div className="rounded-3xl bg-white border border-gray-100 shadow-xl overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              {/* Left — Problem + What I Did */}
+              <div className="p-8 lg:p-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100">
+                    <ShieldCheck className="h-5 w-5 text-red-600" />
                   </div>
-                  <div className="text-sm font-semibold text-gray-700 mb-1">{study.company}</div>
-                  <div className="flex items-center gap-1 text-xs text-gray-500">
-                    <MapPin className="h-3.5 w-3.5" />
-                    {study.location}
+                  <div>
+                    <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">Problem</p>
+                    <p className="text-sm font-bold text-gray-900">Malware, spam & collapsing Google trust</p>
                   </div>
                 </div>
 
-                {/* Body */}
-                <div className="p-5 flex-1 flex flex-col">
-                  <div className="text-2xl font-extrabold text-purple-600 mb-2">
-                    {study.resultHeadline}
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-5 flex-1">
-                    {study.description}
-                  </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Trojan plugin installed — backdoor admin accounts created",
+                    "15,000+ spam pages indexed on Google",
+                    "Rankings dropped, search visibility nearly gone",
+                    "Google trust and local SEO foundation collapsed",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-red-400 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
 
-                  {/* Services used */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {study.services.map((s) => (
-                      <span
-                        key={s}
-                        className="rounded-full bg-purple-100 text-purple-700 px-3 py-1 text-xs font-medium"
-                      >
-                        {s}
-                      </span>
-                    ))}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#18055E]/10">
+                    <TrendingUp className="h-5 w-5 text-[#18055E]" />
                   </div>
+                  <div>
+                    <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">What I Did</p>
+                    <p className="text-sm font-bold text-gray-900">Cleaned, secured & rebuilt from scratch</p>
+                  </div>
+                </div>
 
-                  {/* Metrics */}
-                  <div className="grid grid-cols-2 gap-2">
-                    {study.metrics.map((m) => (
-                      <div key={m.label} className="rounded-lg bg-gray-50 p-2 text-center">
-                        <div className="text-sm font-bold text-gray-900">{m.value}</div>
-                        <div className="text-xs text-gray-500">{m.label}</div>
-                      </div>
-                    ))}
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Removed malware, trojan plugin & backdoor accounts",
+                    "Identified & removed all 15,000+ spam indexed pages",
+                    "Hardened site security to prevent re-infection",
+                    "Rebuilt Google Business Profile & local SEO foundation",
+                    "Rebuilt citation consistency & on-page local signals",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#18055E] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href="/case-study"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#18055E] px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-[#2A0B7A] hover:scale-105 transition-all duration-300"
+                >
+                  See Full Case Study with Screenshots <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+
+              {/* Right — Before/After screenshots */}
+              <div className="bg-gray-50 p-8 lg:p-10 flex flex-col gap-6">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Search Console — Before</p>
+                  <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                    <Image
+                      src="/mhtiles-search-console-before.jpeg"
+                      alt="MH Tiles Search Console — before malware cleanup showing collapsed organic traffic"
+                      width={520}
+                      height={260}
+                      className="w-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[#18055E] uppercase tracking-wider mb-2">Search Console — After Recovery</p>
+                  <div className="rounded-xl overflow-hidden border border-[#18055E]/20 shadow-sm">
+                    <Image
+                      src="/mhtiles-search-console-after.png"
+                      alt="MH Tiles Search Console — after malware cleanup and local SEO rebuild showing recovered organic traffic"
+                      width={520}
+                      height={260}
+                      className="w-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
-            </FadeUp>
-          ))}
-        </div>
-
-        <FadeUp delay={0.2}>
-          <div className="text-center">
-            <Link
-              href="/portfolio"
-              className="inline-flex items-center gap-2 rounded-full bg-purple-600 px-7 py-4 text-base font-semibold text-white shadow-lg shadow-purple-500/30 hover:bg-purple-500 hover:scale-105 transition-all duration-300"
-            >
-              View Detailed Case Studies <ArrowRight className="h-5 w-5" />
-            </Link>
+            </div>
           </div>
         </FadeUp>
       </div>

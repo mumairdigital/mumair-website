@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail, Phone, Linkedin, Facebook, Instagram, MapPin } from "lucide-react";
-import { SITE_CONFIG, NAV_SERVICES, NAV_LOCATIONS_USA, NAV_LOCATIONS_CANADA } from "@/lib/constants";
+import { SITE_CONFIG, NAV_SERVICES, NAV_LOCATIONS_USA } from "@/lib/constants";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -20,15 +20,15 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-600 text-white font-bold text-xl">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#18055E] text-white font-bold text-xl">
                 M
               </div>
               <span className="text-white font-semibold text-lg">
-                Muhammad <span className="text-purple-400">Umair</span>
+                Muhammad <span className="text-[#FEC33B]">Umair</span>
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Local SEO & Digital Marketing Expert helping home service businesses in USA & Canada get more calls, more leads, and more revenue through proven local SEO strategies.
+              I help HVAC companies get more booked calls from Google — through Local SEO, GBP optimization, and targeted Google Ads. Based remotely, serving the US market.
             </p>
             <div className="flex items-center gap-3">
               <a
@@ -36,7 +36,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
+                className="text-gray-400 hover:text-[#FEC33B] transition-colors"
               >
                 <Facebook className="h-5 w-5" />
               </a>
@@ -45,7 +45,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
+                className="text-gray-400 hover:text-[#FEC33B] transition-colors"
               >
                 <TikTokIcon className="h-5 w-5" />
               </a>
@@ -54,7 +54,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
+                className="text-gray-400 hover:text-[#FEC33B] transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
@@ -63,7 +63,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
+                className="text-gray-400 hover:text-[#FEC33B] transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -80,7 +80,7 @@ export function Footer() {
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="text-gray-400 hover:text-purple-300 text-sm transition-colors"
+                    className="text-gray-400 hover:text-[#FEC33B] text-sm transition-colors"
                   >
                     {s.label}
                   </Link>
@@ -89,7 +89,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-gray-400 hover:text-purple-300 text-sm transition-colors"
+                  className="text-gray-400 hover:text-[#FEC33B] text-sm transition-colors"
                 >
                   All Services →
                 </Link>
@@ -102,30 +102,12 @@ export function Footer() {
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
               Locations
             </h3>
-            <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2">
-              USA
-            </p>
-            <ul className="space-y-2 mb-4">
+            <ul className="space-y-2">
               {NAV_LOCATIONS_USA.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="text-gray-400 hover:text-purple-300 text-sm transition-colors"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2">
-              Canada
-            </p>
-            <ul className="space-y-2">
-              {NAV_LOCATIONS_CANADA.map((l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="text-gray-400 hover:text-purple-300 text-sm transition-colors"
+                    className="text-gray-400 hover:text-[#FEC33B] text-sm transition-colors"
                   >
                     {l.label}
                   </Link>
@@ -141,27 +123,27 @@ export function Footer() {
             </h3>
             <ul className="space-y-3 mb-8">
               <li className="flex items-start gap-2">
-                <Mail className="h-4 w-4 text-purple-400 mt-0.5 shrink-0" />
+                <Mail className="h-4 w-4 text-[#FEC33B] mt-0.5 shrink-0" />
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
-                  className="text-gray-400 hover:text-purple-300 text-sm transition-colors"
+                  className="text-gray-400 hover:text-[#FEC33B] text-sm transition-colors"
                 >
                   {SITE_CONFIG.email}
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <Phone className="h-4 w-4 text-purple-400 mt-0.5 shrink-0" />
+                <Phone className="h-4 w-4 text-[#FEC33B] mt-0.5 shrink-0" />
                 <a
                   href={`https://wa.me/${SITE_CONFIG.whatsappNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-purple-300 text-sm transition-colors"
+                  className="text-gray-400 hover:text-[#FEC33B] text-sm transition-colors"
                 >
                   {SITE_CONFIG.whatsapp}
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 text-purple-400 mt-0.5 shrink-0" />
+                <MapPin className="h-4 w-4 text-[#FEC33B] mt-0.5 shrink-0" />
                 <span className="text-gray-400 text-sm">Remote — Serving USA & Canada</span>
               </li>
             </ul>
@@ -170,22 +152,22 @@ export function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-purple-300 text-sm transition-colors">
+                <Link href="/about" className="text-gray-400 hover:text-[#FEC33B] text-sm transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="text-gray-400 hover:text-purple-300 text-sm transition-colors">
+                <Link href="/portfolio" className="text-gray-400 hover:text-[#FEC33B] text-sm transition-colors">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-400 hover:text-purple-300 text-sm transition-colors">
+                <Link href="/blog" className="text-gray-400 hover:text-[#FEC33B] text-sm transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-400 hover:text-purple-300 text-sm transition-colors">
+                <Link href="/contact" className="text-gray-400 hover:text-[#FEC33B] text-sm transition-colors">
                   Contact
                 </Link>
               </li>

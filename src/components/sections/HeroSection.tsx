@@ -3,20 +3,30 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Brain, Star, Phone } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone, Wind } from "lucide-react";
 import { HeroOrbs } from "@/components/animations/HeroOrbs";
-import { CountUp } from "@/components/animations/CountUp";
-import { STATS } from "@/lib/constants";
 
-const iconMap = {
-  Brain,
-  Star,
-  Phone,
-};
+const trustSignals = [
+  "HVAC is my primary niche — not a side offering",
+  "You work directly with me, not a junior handler",
+  "Real data: Search Console & GMB screenshots provided",
+];
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-[#0a0a0a] flex items-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+      {/* Background image with navy overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="/hero-bg.webp"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#18055E]/92 via-[#18055E]/75 to-[#18055E]/30" />
+      </div>
+
       <HeroOrbs />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 md:px-8">
@@ -28,10 +38,10 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-600/10 px-4 py-2 text-sm text-purple-300 mb-6"
+              className="inline-flex items-center gap-2 rounded-full border border-[#FEC33B]/40 bg-[#FEC33B]/10 px-4 py-2 text-sm text-[#FEC33B] mb-6"
             >
-              <span className="inline-block h-2 w-2 rounded-full bg-purple-500 animate-pulse" />
-              Helping Home Service Businesses Get More Calls — 2+ Years
+              <Wind className="h-4 w-4" />
+              HVAC Local SEO Specialist — 2+ Years
             </motion.div>
 
             {/* Main Headline */}
@@ -41,8 +51,9 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl font-extrabold leading-tight text-white sm:text-6xl lg:text-7xl mb-4"
             >
-              Local SEO Expert{" "}
-              <span className="gradient-text">Delivering Real Results</span>
+              I Help HVAC Companies{" "}
+              <span className="gradient-text">Get More Booked Calls</span>{" "}
+              From Google
             </motion.h1>
 
             {/* Sub Headline */}
@@ -50,9 +61,9 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl font-semibold text-purple-400 mb-5"
+              className="text-xl font-semibold text-[#FEC33B]/90 mb-5"
             >
-              Digital Marketing That Fills Your Phone With Leads
+              Local SEO · Google Business Profile · Google Ads
             </motion.p>
 
             {/* Description */}
@@ -60,9 +71,9 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-gray-400 text-lg leading-relaxed mb-8 max-w-lg"
+              className="text-gray-300 text-lg leading-relaxed mb-8 max-w-lg"
             >
-              I specialize in Local SEO, Google Business Profile optimization, high-converting websites, and Google & Meta Ads. I help HVAC companies, plumbers, roofers, and electricians rank #1 on Google and Google Maps in USA & Canada to generate more calls, more leads, and more revenue.
+              When someone searches &ldquo;AC repair near me&rdquo; at 9pm, the HVAC company on page one gets the call. I help you be that company — through Local SEO, GBP optimization, and targeted Google Ads. I work directly with you. No agency handoffs. No invented numbers.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -70,41 +81,39 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-4 mb-12"
+              className="flex flex-wrap gap-4 mb-10"
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-purple-600 px-7 py-4 text-base font-semibold text-white shadow-lg shadow-purple-500/30 transition-all duration-300 hover:bg-purple-500 hover:scale-105 hover:shadow-purple-400/50 btn-glow"
+                className="inline-flex items-center gap-2 rounded-full bg-[#FEC33B] px-7 py-4 text-base font-semibold text-[#18055E] shadow-lg shadow-[#FEC33B]/20 transition-all duration-300 hover:bg-yellow-300 hover:scale-105 btn-glow"
               >
                 Get Free Consultation <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
-                href="/portfolio"
-                className="inline-flex items-center gap-2 rounded-full border border-purple-500/50 px-7 py-4 text-base font-semibold text-purple-300 transition-all duration-300 hover:border-purple-400 hover:text-white hover:bg-purple-600/10"
+                href="/case-study"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-4 text-base font-semibold text-white transition-all duration-300 hover:border-white/60 hover:bg-white/5"
               >
-                See My Results
+                See Real Case Study
               </Link>
             </motion.div>
 
-            {/* Stats Row */}
+            {/* Trust Signals */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="grid grid-cols-2 gap-6 sm:grid-cols-4"
+              className="space-y-2"
             >
-              {STATS.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="text-3xl font-extrabold text-white">
-                    <CountUp end={stat.value} suffix={stat.suffix} />
-                  </div>
-                  <div className="text-xs text-gray-400 mt-1">{stat.label}</div>
+              {trustSignals.map((signal) => (
+                <div key={signal} className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-[#FEC33B] shrink-0" />
+                  <span className="text-sm text-gray-300">{signal}</span>
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* Right — Hero Image */}
+          {/* Right — Headshot */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -112,12 +121,12 @@ export function HeroSection() {
             className="relative flex justify-center"
           >
             <div className="relative">
-              {/* Purple gradient card behind image */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-600 to-violet-700 opacity-30 blur-2xl scale-105" />
-              <div className="relative rounded-3xl overflow-hidden border border-purple-500/30 shadow-2xl shadow-purple-500/20 bg-gradient-to-br from-purple-900/50 to-violet-900/30">
+              {/* Glow behind image */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#18055E] to-[#2A0B7A] opacity-40 blur-2xl scale-105" />
+              <div className="relative rounded-3xl overflow-hidden border border-[#FEC33B]/20 shadow-2xl shadow-[#18055E]/50 bg-gradient-to-br from-[#18055E]/50 to-[#2A0B7A]/30">
                 <Image
-                  src="/umair.jpg.png"
-                  alt="Muhammad Umair — Local SEO & Digital Marketing Expert for Home Service Businesses"
+                  src="/umair-headshot.webp"
+                  alt="Muhammad Umair — HVAC Local SEO Specialist"
                   width={480}
                   height={520}
                   priority
@@ -126,32 +135,33 @@ export function HeroSection() {
                 />
               </div>
 
-              {/* Floating Badges */}
+              {/* Floating Badge — Specialist */}
               <motion.div
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -top-4 -left-4 flex items-center gap-2 rounded-xl bg-white px-3 py-2 shadow-xl"
               >
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-100">
-                  <Brain className="h-4 w-4 text-purple-600" />
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#18055E]/10">
+                  <Wind className="h-4 w-4 text-[#18055E]" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-gray-900">AI-Powered</div>
-                  <div className="text-xs text-gray-500">Marketing</div>
+                  <div className="text-xs font-bold text-gray-900">HVAC Specialist</div>
+                  <div className="text-xs text-gray-500">Primary Focus</div>
                 </div>
               </motion.div>
 
+              {/* Floating Badge — Real Data */}
               <motion.div
                 animate={{ y: [5, -5, 5] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-4 -right-4 flex items-center gap-2 rounded-xl bg-white px-3 py-2 shadow-xl"
               >
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-100">
-                  <Star className="h-4 w-4 text-yellow-500" fill="currentColor" />
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FEC33B]/20">
+                  <Phone className="h-4 w-4 text-[#18055E]" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-gray-900">30+ Clients</div>
-                  <div className="text-xs text-gray-500">5-Star Results</div>
+                  <div className="text-xs font-bold text-gray-900">Real Data</div>
+                  <div className="text-xs text-gray-500">Verifiable Results</div>
                 </div>
               </motion.div>
             </div>

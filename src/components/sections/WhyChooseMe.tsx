@@ -1,4 +1,4 @@
-import { MapPin, Trophy, Home, Target, MessageCircle, Layers } from "lucide-react";
+import { MapPin, Trophy, Home, Wind, MessageCircle, Layers } from "lucide-react";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { WHY_CHOOSE_ME } from "@/lib/constants";
 
@@ -6,7 +6,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   MapPin,
   Trophy,
   Home,
-  Target,
+  Wind,
   MessageCircle,
   Layers,
 };
@@ -32,8 +32,8 @@ export function WhyChooseMe() {
             return (
               <FadeUp key={reason.title} delay={i * 0.08}>
                 <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm card-hover h-full">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 mb-4">
-                    <Icon className="h-6 w-6 text-purple-600" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#18055E]/10 mb-4">
+                    <Icon className="h-6 w-6 text-[#18055E]" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{reason.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{reason.description}</p>

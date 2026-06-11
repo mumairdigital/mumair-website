@@ -18,8 +18,8 @@ export function AboutSection() {
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-600 to-violet-700 opacity-20 blur-2xl scale-105" />
                 <div className="relative rounded-3xl overflow-hidden border border-purple-200 shadow-2xl bg-gradient-to-br from-purple-50 to-violet-50">
                   <Image
-                    src="/umair.jpg.png"
-                    alt="Muhammad Umair — Local SEO & Digital Marketing Strategist"
+                    src="/umair-headshot.webp"
+                    alt="Muhammad Umair — HVAC Local SEO Specialist"
                     width={440}
                     height={480}
                     className="object-cover object-top"
@@ -28,12 +28,12 @@ export function AboutSection() {
                 </div>
 
                 {/* Floating stat badges */}
-                <div className="absolute -top-3 -right-3 rounded-xl bg-purple-600 px-4 py-2 text-white text-sm font-bold shadow-lg">
-                  2+ Years Expert
+                <div className="absolute -top-3 -right-3 rounded-xl bg-[#18055E] px-4 py-2 text-white text-sm font-bold shadow-lg">
+                  HVAC Specialist
                 </div>
                 <div className="absolute -bottom-3 -left-3 rounded-xl bg-white px-4 py-2 shadow-lg">
-                  <div className="text-xs text-gray-500">Clients Served</div>
-                  <div className="text-lg font-extrabold text-purple-600">30+</div>
+                  <div className="text-xs text-gray-500">Experience</div>
+                  <div className="text-lg font-extrabold text-[#18055E]">2+ Years</div>
                 </div>
               </div>
             </div>
@@ -42,17 +42,17 @@ export function AboutSection() {
           {/* Text Side */}
           <FadeUp delay={0.15}>
             <div>
-              <p className="text-purple-600 text-sm font-semibold uppercase tracking-wider mb-3">
+              <p className="text-[#18055E] text-sm font-semibold uppercase tracking-wider mb-3">
                 About Muhammad Umair
               </p>
               <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">
-                Local SEO & Digital Marketing Strategist
+                HVAC Local SEO Specialist
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Hi, I&apos;m Muhammad Umair, a digital marketing consultant with 2+ years of experience helping home service businesses in USA and Canada rank on Google and Google Maps. I specialize in Local SEO and Google Business Profile optimization — the combination that gets HVAC companies, plumbers, roofers, and electricians found by customers ready to hire right now.
+                Hi, I&apos;m Muhammad Umair. I help HVAC companies get more booked service calls from Google. My focus is Local SEO and Google Business Profile optimization — the combination that puts HVAC businesses in front of customers who are ready to hire right now, in their city.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                Past results include 400+ monthly calls for an HVAC client, 180%+ organic traffic growth, and $2-$5 cost per conversion on Google Ads. I only work with home service businesses, which means I understand your industry deeply and know exactly what works.
+                I work directly with every client — no account managers, no outsourced team. I keep my client load intentionally small so I can give each business the attention it deserves. If you want to work with me, I&apos;ll tell you honestly what I think the opportunity looks like in your market, and I&apos;ll back everything I say with real data.
               </p>
 
               {/* Stat Badges */}
@@ -64,11 +64,11 @@ export function AboutSection() {
                       key={stat.label}
                       className="flex items-center gap-3 rounded-xl bg-white border border-gray-100 p-4 shadow-sm"
                     >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100 shrink-0">
-                        <Icon className="h-5 w-5 text-purple-600" />
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#18055E]/10 shrink-0">
+                        <Icon className="h-5 w-5 text-[#18055E]" />
                       </div>
                       <div>
-                        <div className="text-xl font-extrabold text-gray-900">
+                        <div className="text-xl font-extrabold text-[#18055E]">
                           {stat.value}
                           {stat.suffix}
                         </div>
@@ -81,7 +81,7 @@ export function AboutSection() {
 
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-500/30 hover:bg-purple-500 hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-full bg-[#18055E] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#18055E]/30 hover:bg-[#2A0B7A] hover:scale-105 transition-all duration-300"
               >
                 Learn More About Me <ArrowRight className="h-4 w-4" />
               </Link>
